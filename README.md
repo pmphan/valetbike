@@ -7,6 +7,7 @@ Starter App for ValetBike project
 
 * Adriana Beltran Andrade
 * Helen Y. Glover
+* M. Phuong Phan
 
 ## Environment Configuration
 
