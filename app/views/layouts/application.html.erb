@@ -12,59 +12,95 @@
     <link href="/favicon.ico" rel="icon" type="image/x-icon">
     <title>ValetBike</title>
   </head>
+
   <body>
+
+    <%# Reference: https://human-se.github.io/rails-demos-n-deets-2020/demo-bootstrap-navbar/ %>
+  
     <div id="site-container" class="flexbox vertical stretch flex-1">
-    <%# everything above was provided %>
-    
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <img src="/pretendlogo.jpg" alt="ValetBike"> <%#located in assets %>
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container brandbox">
+      <a class="navbar-brand" href="/">
+        <img src="/pretendlogo.jpg" alt="ValetBike"> <%#located in assets. Might work better in index.html %>
+      </a>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-      
-          <li class="nav-item">
-            <%= link_to "Help", "/account", class: "nav-link", method: :get %>
-          </li>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <div>
+            <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item">
-            <%= link_to "Rent", "/account", class: "nav-link", method: :get %>
-          </li>
-        </ul>
+              <li class="nav-item active">
+                <%= link_to "Home", "/home", class: "nav-link", method: :get %>
+              </li>
 
-        <%# <div>
-          <ul class="navbar-nav mr-auto">
-            <% if logged_in? %>
-              <%# <li class="nav-item active">
-                <%= link_to "Account", "/account", class: "nav-link", method: :get %>
-              <%# </li>
-            <% else %>
-              <%# <li class="nav-item active"> %>
-                <%# <%= link_to "Signup", '/signup', class: "nav-link", method: :get %>
-              <%# </li>
-              <li class="nav-item active"> %>
-                <%# <%= link_to "Login", "/login", class: "nav-link", method: :get %>
-              <%# </li>
-            <% end %>
-          <%# </ul>
-        </div> %>
-        
-        <form class="form-inline my-2 my-lg-0">
+              <li class="nav-item">
+                <%= link_to "Rent", "/rent", class: "nav-link", method: :get %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Help", "/help", class: "nav-link", method: :get %>
+              </li>
+            </ul>
+          </div>
+          
+          <%# <div>
+            <ul class="navbar-nav mr-auto"> %>
+              <%# <% if log_in? %>
+                  <%# <li class="nav-item active"> %>
+                    <%# <%= link_to "Account", "/account", class: "nav-link", method: :get %>
+                  <%# </li>
+                  <li class="nav-item active"> %>
+                    <%# <%= link_to "Logout", "/logout", class: "nav-link", method: :post %>
+                  </li>
+                <%# <% else %>
+                  <%# <li class="nav-item active">
+                    <%= link_to "Signup", '/signup', class: "nav-link", method: :get %>
+                  <%# </li>
+                  <li class="nav-item active"> %>
+                    <%# <%= link_to "Login", "/login", class: "nav-link", method: :get %>
+                  <%# </li>
+                <% end %>
+              <%# </ul>
+            </div> %>
+
+          <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
       </div>
     </nav>
+    
+    <main>
+      <div class="flexbox vertical center">
+        <%= yield %>
+      </div>
+    </main>
 
-    <%# everything below was provided %>
-    <div class="flexbox vertical center">
-      <%= yield %>
+    <div class="wrapper">
+      <footer class="flexbox horizontal justify-space-between">
+        <div>&copy; Hydrabikes Founded in 89 B.C.</div>
+
+        <%# Add color using javascript %>
+        <div>
+          Reach out to us <a href="mailto:hydrabikes@gmail.com"> Email: Hydrabikes </a>
+        </div>
+        
+        <%# for inclusive purposes %>
+        <%# Reference: https://www.coderepublics.com/howto/how-to-google-translate.php %>
+        <div id="google_translate_element"></div>
+          
+          <script type="text/javascript"> 
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+          
+        <script type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </footer>
+      </div>
     </div>  
   </body>
 </html>
