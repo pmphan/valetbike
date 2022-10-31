@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   match 'rent', to: 'rent#index', via: 'get'
 
   #match '/map/:id', to: 'map#show', via: 'get'
-
+  get 'help'    => 'help#index'
+  get 'signup'  => 'users#new'
   get 'home/index'
-  get 'help/index'
   get 'login/index'
   get 'rent/index'
+  resources :users
 end

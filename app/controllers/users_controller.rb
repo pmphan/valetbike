@@ -2,6 +2,10 @@ class UserController < ApplicationController
 
   skip_before_action :authorized, only: [:new, :create]
 
+  def index
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -18,5 +22,8 @@ class UserController < ApplicationController
       end
       render :action => 'new'
     end
+  end
+
+  def delete
   end
 end
