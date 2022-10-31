@@ -1,9 +1,7 @@
-class UserController < ApplicationController
-
-  skip_before_action :authorized, only: [:new, :create]
+class UsersController < ApplicationController
 
   def index
-    @user = User.find(params[:id])
+    @user = User.find(params[:identifier])
   end
 
   def new
@@ -11,19 +9,23 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:username, :password, :name, :email))
+    @user = User.new(user_params)
     if @user.save
       log_in @user
-      session[:user_id] = @user.id
-      redirect_to root_path
+      session[:user_id] = @user.identifier
+      redirect_to root_path, notice: "Registration successful"
     else
-      #need requirement
-      flash.now[:alert] << "Error: Please check the username password requirements"
-      end
-      render :action => 'new'
+      render :new
     end
   end
 
   def delete
   end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password,
+                                 :password_confirmation)
+  end
+
 end
