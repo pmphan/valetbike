@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   #match '/map/:id', to: 'map#show', via: 'get'
   get 'help'    => 'help#index'
   get 'home/index'
-  get 'login/index'
   get 'rent/index'
 end
