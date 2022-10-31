@@ -12,10 +12,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      session[:user_id] = @user.identifier
-      redirect_to root_path, notice: "Registration successful"
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: "Registration Successful"
     else
-      render :new
+      flash.now[:alert] = @user.errors.full_messages
+      render :new, status: :unprocessable_entity  
     end
   end
 

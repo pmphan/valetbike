@@ -31,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "duplicate email" do
+  test "no duplicate" do
     dup = @user.dup
     @user.save
     assert_not dup.valid?
