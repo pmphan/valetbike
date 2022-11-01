@@ -10,6 +10,14 @@
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet" type="text/css">
     <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <%# CSS for leaflet %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+    crossorigin=""/>
+    <%# Javascript for leaflet %>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""></script>
     <title>ValetBike</title>
   </head>
 
@@ -60,7 +68,8 @@
           </form>
       </div>
     </nav>
-    
+
+
     <main>
       <div class="flexbox vertical center">
         <% if notice %>
