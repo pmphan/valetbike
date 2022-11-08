@@ -10,20 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_31_153852) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_004106) do
   create_table "bikes", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "identifier"
-    t.integer "current_station_id"
+    t.string "identifier"
+    t.string "current_station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", limit: 1, default: 0, null: false
+    t.string "current_user_id"
+    t.index ["identifier"], name: "index_bikes_on_identifier", unique: true
   end
 
   create_table "stations", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "identifier"
+    t.string "identifier"
     t.string "name"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude", default: 0.0, null: false
+    t.float "longitude", default: 0.0, null: false
+    t.integer "capacity", limit: 1, default: 0, null: false
+    t.index ["identifier"], name: "index_stations_on_identifier", unique: true
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -38,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_153852) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["identifier"], name: "index_users_on_identifier", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
