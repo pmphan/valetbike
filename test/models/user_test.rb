@@ -55,4 +55,5 @@ class UserTest < ActiveSupport::TestCase
     @user.password_confirmation = "john"
     assert_not @user.valid?
   end
+
 end
