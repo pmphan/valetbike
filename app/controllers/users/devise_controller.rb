@@ -1,3 +1,5 @@
+# Workaround for Turbo blocking JS preventing Devise from displaying flash messages.
+# Reference: https://betterprogramming.pub/devise-auth-setup-in-rails-7-44240aaed4be
 class Users::DeviseController < ApplicationController
   class Responder < ActionController::Responder
     def to_turbo_stream

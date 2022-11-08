@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
-  devise_for :users
+  devise_for :users, module: "users"
 
   #pls delete once webpage is set
   match 'about', to: 'about#index', via: 'get'
