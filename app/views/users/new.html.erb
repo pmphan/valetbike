@@ -1,0 +1,18 @@
+<%# <h1>User Profile</h1>
+  <div class="flexbox vertical">
+    <br> <!-- Basic user info -->
+    <p><b>Username:</b> <%= current_user.username %>
+    <%# <p><b>Email:</b> <%= current_user.email %>
+    <%# <p><b>Total Rental Time:</b> <%= (current_user.totalMinutes / 60) %> 
+    <%# <div id="bikes"> 
+      <% if @bikes.present? %> <!-- Template displays rental date and time --> %>
+        <%# <%= render(partial: "bikes/rowForUser", collection: @bikes, as: :bike) %> %>
+      <%# <% else %>
+        <%# <div class="empty">
+          No bikes currently rented.  %>
+        <%# </div>
+      <% end %>
+    <%# </div> %>
+  <%# </div>  %>
+
+  
