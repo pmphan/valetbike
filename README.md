@@ -1,147 +1,150 @@
-# ValetBike
+[IN PROGRESS]
 
-Smith College CSC223: Software Engineering\
-Starter App for ValetBike project
+# Hydrabike
 
-## Team Members
+#### **Starter App for ValetBike project | Smith College CSC223: Software Engineering**
 
-* Adriana Beltran Andrade
-* Helen Y. Glover
-* M. Phuong Phan
-* Bobi Arce Mack
+
+## Prototype Review
+This prototype review is a reflection of the process that Hydabike has completed so far. It aims to help us evaluate the features still under development and determine next steps for delivering a final software product. It also allows us to think about our team collabration for ensuring future success. 
+
 
 ## Environment Configuration
 
-As you configure your environment you should **keep a log** where you **write down all the steps you take** including **each command you type**. You will inevitably run into errors setting up your development environment and maintaining a meticulous log will allow others to help you troubleshoot. Ignore this recommendation at your own peril, but don't say you haven't been warned :]
 
-Installing Ruby on Rails is not a trivial process. It is the essential first step to developing ValetBike, and it will take you far longer than all the other steps to complete. Be sure to set aside ample time to work through the setup.
+### Step 1: Cloning the project 
+- Click 'code' at th top of this GitHub page
+- Create a local copy of your fork with: `git clone https://github.com/<your_username>/valetbike.git`.
+- Make sure to store the project in a designated location (i.e. /Users/Code/)
 
-### 0. Remember that versions matter
-ValetBike runs on Ruby 3.1.2 and Rails 7.0.3.1. It is essential that you configure your environment to use these precise versions of the language and framework.
+### Step 2: Install MySQL 8
 
-### 1. Install Ruby on Rails with MySQL
+- Download [MySQL](https://www.mysql.com/downloads/). Make sure to select the version that correlates to your operating system
 
-On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides below explain how to do so in detail:
+- Follow this [installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) for proper installation 
 
-- [Mac Ruby on Rails Developer Environment Setup](https://github.com/deadroxy/valetbike/blob/master/notes/mac-setup.md)
-- [Windows Ruby on Rails Developer Environment Setup](https://github.com/deadroxy/valetbike/blob/master/notes/windows-setup.md)
-
-Be sure to complete all the installation procedures in the relevant guide before continuing on to the next step.
-
-### 2. Fork & clone the ValetBike repo
-
-- Click fork in the upper right hand corner of the ValetBike GitHub page
-- This creates a copy of the repository on your personal GitHub account
-- To access this code on your development machine, create a local copy of your fork with:\
-  `git clone https://github.com/<your_username>/valetbike.git`
-- Note: you should run that command when you are in the folder where you want to store the repo\
-  (e.g. `/Users/<your_username>/Development`)
-
-### 3. Prepare the application
-
-- Enter the directory you just created: `cd valetbike`
-- Add `.tool-versions` to app directory to ensure the right ruby is always used: `asdf local ruby 3.1.2`
-- Install required gems with: `bundle install`
-
-### 4. Configure the database environment variables
-
-- Add a file called `.env` to the valetbike root directory
-- Ensure that it includes the credentials you setup when installing MySQL:
-
-```shell
-MYSQL_USERNAME=root
-MYSQL_PASSWORD=YOURPASSWORD
-MYSQL_SOCKET=/tmp/mysql.sock              # For Mac
-MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
+- In the `env.rb` file, include: 
+```
+- ENV['MYSQL_USERNAME'] = "root"
+- ENV['MYSQL_PASSWORD'] = password
+- MYSQL_SOCKET=/tmp/mysql.sock              # For Mac
+- MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
 ```
 
-### 5. Prepare the database in MySQL
+### Step 3: Install Ruby 3.12
 
-- Use rails to create both the development and test databases with:\
-  `rake db:create`
-- Or use mysql to just create the development databse with:\
-  `mysql -u root -p`\
-  `CREATE DATABASE valetbike_development;`\
-  `exit`
-- Then run the database migrations with:\
-  `rake db:migrate`
+- To set up your local machine from scratch, you will first need to install Ruby. Depending on your operating system, use one of the following guides for the initial step.
 
-### 6. Confirm that the app runs
+- Install Ruby on Mac (Intel and M1)
+- Install Ruby on Mac (M1 additional details)
+- Install Ruby on Windows 10
 
-* Launch the web server using `rackup` or `rails s` (short for `rails server`) or `bin/dev`
-* If using `rackup` open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
-* If using `rails s` or `bin/dev` open http://localhost:3000 (or http://127.0.0.1:3000) in a browser
-* You should see ValetBike welcome page
-  
+* Make sure you have the correct Ruby version installed. To check, use command `ruby -v` to see your version.*
 
-## Assignment #1: Hello Stack, Welcome to ValetBike!
+* Consult this [Ruby Terminal Commands](https://docs.railsbridge.org/ruby/command_line) for more options*
 
-### Brief Background
-You and several other junior engineers have just started at ValetBike, a community tech co-op based in Nipmuc Notch, and you are excited to finally be getting paid to contribute to a meaningful app. During your hiring interview, you said you were comfortable doing full stack programming, but stressed you hadn't worked in Ruby on Rails before. The lead developer thought you were right for the position and promised you a guided tour of the codebase on your first day. However, after your onboarding, you learn they've just gone on leave indefinitely. It also turns out the lead developer was the *only* developer at ValetBike, and now the rest of the team is counting on you and the other new programmers to complete the prototype before the scheduled launch day.
+### Step 4: Installing Gems
 
-As a fearless software engineer you agree to onboard yourself and attempt to continue the build. You didn't get much information about the architecture or design of the product during your interview. All you remember is that the lead developer had been working with the [ValleyBike](https://valleybike.org) team to iterate on their system which launched in 2018 and that they were using GitHub to collaborate on their codebase.
+- Disable gem docs:
+ `echo "gem: --no-document" >> ~/.gemrc`
+- Install Rails 6.1.4:
+ `gem install rails --version 6.1.4`
+- Install MySQL gem:
+ `gem install mysql2`
+ 
+- Install required gems:
+`bundle install`
 
-### Assignment Goal
-Your primary objective is to get your development environment configured so that the existing app will run on your machine. To exceed expectations, you must add at least one feature to the current code. To distinguish yourself, you should add two or more features. See submission guidelines below for complete details.
+### Step 5: Running your project
+Congratulations, you should be all set to run the project!
+- If using `rackup` open `http://localhost:9292 (or http://127.0.0.1:9292)` in a browser
+- If using `rails s` open `http://localhost:3000 (or http://127.0.0.1:3000)` in a browser
 
-### How to Begin
-* Create a GitHub account if you don't have one
-* Go to [https://github.com/deadroxy/valetbike](https://github.com/deadroxy/valetbike)
-* Follow the README instructions to configure your environment
+## Updates
 
-### Teamwork Guidelines
-You may work in teams of up to five people to get your environments set up and to modify the code. But you must each submit your own unique environment screenshots via Moodle. If you choose to fork the repo to add features, you can collaborate on the code, but you must each create and submit a record of a unique pull request.
+### Map Visability 
+In order to see the map, we overrode precompile assets. In `valetbike/.gitignore`, we add 
+```
+# Ignore precompile assets
+public/assets/
+```
 
-### Ruby on Rails Guides
-You will probably be unfamiliar with the main components of the ValetBike stack like the language (Ruby), the framework (Rails), and the database (MySQL). Luckily the lead developer left links to their favorite books and tutorials for you below. Consult them regularly as you get your bearings in the new environment.
+### Gemfile
+Added devise gem for user log-in and registration
+`gem 'devise`
+`gem 'uniquify`
 
-* [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
-* [I Love Ruby](https://i-love-ruby.gitlab.io/)
-* [The Bastards Book of Ruby](http://ruby.bastardsbook.com/)
-* [Why's (Poignant) Guide to Ruby](https://poignant.guide/)
+### Gemfile.lock
+In GEM, added
+`bcrypt (3.1.18)` to hash and secure passwords
 
-### Exploration Tips
-* Review the files the lead developer left in the `notes/` folder
-* Pay special attention to the environment setup and [app creation](https://github.com/deadroxy/valetbike/blob/master/notes/app-creation.md) guides
-* Use GitHub to dive into previous commits to see what they built so far
-* Use `rails console` to experiment with creating station & bike records from the command line
-  - `s = Station.new(name: "Neu Station", address: "123 Novel Lane", identifier: "45")`
-  - `s.save`
-  - `b = Bike.new(identifier: "1234")`
-  - `b.current_station = s`
-  - `b.save`
-  - `s.docked_bikes`
-  - `s.docked_bikes.count`
+In PLATFORMS, add 
+```
+  arm64-darwin-21
+  x86_64-darwin-21
+ ```
+ All commands
+- nokogiri (1.13.8-x86_64-darwin)
+- racc (~> 1.4)
+- tailwindcss-rails (2.0.12-x86_64-darwin)
+- railties (>= 6.0.0)
+- devise (4.8.1)
+- bcrypt (~> 3.0)
+- orm_adapter (~> 0.1)
+- railties (>= 4.1.0)
+- responders
+- warden (~> 1.2.3)
+- orm_adapter (0.5.0)
+- responders (3.0.1)
+- actionpack (>= 5.0)
+- railties (>= 5.0)
+- warden (1.2.9)
+- rack (>= 2.0.9)
+- devise
 
-### Submission Guidelines to Meet Expectations
-1. Get ValetBike running on your development machine
-2. Modify the welcome message
-3. Take a screenshot showing your change works (include browser, console, date/time)
-4. Name the screenshot "youremail-a1-ss.png" or *.jpg (for me it would be "jbrewer-a1-ss.png")
-5. Create a text file called "youremail-a1-team.txt" (for me it would be "jbrewer-a1-team.txt")
-6. List the names of everyone you worked with on this assignment, including your own (for me it would be "Johanna Brewer")
-7. Submit your screenshot and team list via Moodle
+##Seeding the database
 
-### Submission Guidelines to Exceed Expectations or Distinguish yourself
-1. Complete all of the Meets Expectations tasks
-2. Implement one (Exceeds) or more (Distinguished) of the features below
-   - Show number of docked bikes at each station
-   - Create rake task to import station & bike data from csv files
-   - Allow user to view list of bikes
-   - Allow user to switch between station and bike list views
-   - Allow user to reverse sort order of stations or bikes in list view
-3. Commit and push your changes to your fork on GitHub
-4. Create a pull request from your modified fork to the main ValetBike repo
-5. Create a file called "youremail-a1-pr.txt" (for me it would be "jbrewer-a1-pr.txt")
-6. Include a complete link to your pull request as the first line of this file (e.g. "https://github.com/deadroxy/valetbike/pull/1234")
-7. Submit your pull request file along with your screenshot and team list via Moodle
+These commands can help you create and edit databases
+1. `bundle install`
+2. `rake db:drop` (if a previous database has been created or in use)
+3. `rake db:create`
+4. `rake db:migrate`
+5. `rake db:seed`
+6. `rackup` or `rails s`
+- run rake import_csv:create_stations
+- run rake import_csv:create_bikes
+- run rake import_csv:create_rides
 
-## License
-Copyright 2021-2022, Johanna Brewer
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+# MVP Functionality 
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses.
+| Feature        | Location           | Function |
+| ------------- |:-------------:| -----:|
+| Map      | Home Page | The homepage includes a map with hoverable markers fo riders to see available bikes using hoverable pins|
+| Sign Up     | User  |  Checks for input validity with a unique username, password,and email  |
+| Log in |  User     | Checks log-in information, directs user to profile and supports renting process|
+| User Profile |  User     | Basic account information and past bike transactions|
+| FAQ | Resources     |  User can find questions and answers, can also look at relevant biking resources |
+| Renting | Rent      |  User can choose membership options and pricing plans for bike renting |
+| About | About     |   Mission of Hydrabike with information about the team |
 
+# WalkThrough
+
+Welcome to Hydrabikes, a bike sharing collabration for all. 
+
+Once you clone the project and open it using 'rails s' or 'rackup', you will be on the greeted on the **home page**. This page includes a map of bikes and stations in Nipmoc Notch. If you hover over the **map**, you would see a hand icon that will allow you to click and grab the map. Hover over the markers to see available bike. 
+
+On the top there is a **navigation bar** which every webpage will include for easy access to our features. If you're hoping to use Hydrabike in a different language, there is a **Google Translate** feature in the footer. Additionally, our **contact information** is open to your questions or concerns. 
+
+Do you want to learn a little more about Valetbike before signing up? Check out our **About** page to see our mission and team members. One of our founding principles is to keep the users at the center of the process. 
+
+Do you have questions? Check out our **Resources Page** for FAQs. We also have resources and articles about biking to explore!
+
+If you are ready to create an account, click on the **Sign Up** to get started. Once you created a account and aree signed in, check out your new user profile in the account page.
+
+Now that you are a new member of the Hydrabike community, navigate to the home page and map to rent a bike. On our **rent** page includes a variety of membership options and  pricing plans suited for your lifestyle. Select a option and checkout with Paypal. 
+
+Thank you so much for purchasing a bike from Hydrabike! Enjoy your ride!
+
+Make sure when you are done using the website to **log out**. Logging back in is simple, just click the sign in again!
