@@ -2,3 +2,15 @@
 <p> pls use application found in layout for the design. link back to this page </p>
 <!--where the map will show up in  -->
 <div id="map"></div>
+<%= javascript_include_tag "map" %>
+<div><%= @test %></div>
+<!-- Creates a list of the location data needed for the map -->
+<!--
+<% locations = []%>
+<% @stations.each do |s| %>
+    <% newloc = [s.name, s.latitude , s.longitude , s.address ]%>
+    <% locations.push(newloc) %>
+<% end %>
+<%= locations %>
+<%# <script type = "text/javascript" , src = "app/application.js"> addStationMarkers(locations)</script> %>
+-->
