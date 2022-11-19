@@ -7,6 +7,7 @@ class StationsController < ApplicationController
   #build a geoJSON version of stations whenever the map asks us to
   def mapJSON
     @s = Station.all
+    #@s = Station.coordinates("42.3329593","42.3358668","-72.669955","-72.6838356")
 
     geojson = @s.map do |station|
       {

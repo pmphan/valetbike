@@ -10,5 +10,6 @@ class Station < ApplicationRecord
 # "latitude, longitude"
 # "find."
 # where(latitude: lat1...lat2, longitude: long1...long2)
-#  scope :coordinates, -> (lat1, lat2,long1, long2) {Station.where('latitude <? AND latitude <? AND longitude <? AND longitude >?', lat1, lat2. long1,long2)}
+  scope :coordinates, -> (lat1, lat2, long1, long2) {Station.where('latitude >=? AND latitude <=? AND longitude >=? AND longitude <=?', lat1, lat2, long1, long2)}
+  #scope :coordinates, -> (lat1, lat2,long1, long2) {Station.where(latitude: 1).and(Post.where(longitude: 2))}
 end
