@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'about'    => 'about#index'
   get 'help'    => 'help#index'
   get 'stations/mapJSON'    => 'stations#mapJSON'
+  get 'memberships'  => 'memberships#index'
+  get 'payment'  => 'payment#index'
   get 'rent/index'
 end

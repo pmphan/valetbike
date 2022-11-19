@@ -1,223 +1,108 @@
-<%# RESOURCE PAGES WITH ADDITIONAL LINKS %>
-
+<h1>Resources</h1>
 
 <div class="section-inner flexbox vertical stretch">
+  <div class="container-circle">
+    <div class="circle">
+    <%= image_tag("signup.jpg", class: "pic-change", alt: "user image") %>
+    <p class="text">Join</p>
+    <p class="text-1">Become a member and choose a membership option that fits your lifestyle.</p>
+    </div>
+    <div class="circle">
+    <%= image_tag('unlock.jpg', alt: 'ValetBike', class: "pic-change") %>
+    <p class="text">Unlock</p>
+    <p class="text-1">Unlock a bike using the mobile app and enjoy!</p>
+    </div>
+    <div class="circle">
+    <%= image_tag('dock.jpg', alt: 'ValetBike', class: "pic-change") %>
+    <p class="text">Dock</p>
+    <p class="text-1">Dock your bike at any station and see vertification on your phone.</p>
+    </div>
+  </div>
+  </div>
 
-  <h1 class="section-title">Frequently Asked Questions</h1>
+  <h3>FAQs</h3>
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Why should I choose Hydrabikes?
+      </button>
+    </h3>
+    <div id="collapseOne" class="accordion-collapse collapse"  aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        We deliver fast, easily maintainable bikes at an affordable price.
+      </div>
+    </div>
+  </div>
   
-  <div class="accordion">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         Where can I sign up for a bike?
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          Welcome! Click <%= link_to "here", "/login" %> to log into your account. No account? Sign up <%= link_to "here", "/signup" %>!
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Where can I find the bikes?
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          You can find all of the bikes on this <%= link_to "map", "/home" %>. Click on the map icons to find which bikes are available.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          What membership options do you have?
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          Find out about our memberships and pricing <%= link_to "here", "/pricing" %>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Why should I choose Hydrabikes?
-        </button>
-      </h2>
-      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          We deliver fast, easily maintainable bikes at an affordable price.
-        </div>
+      </button>
+    </h3>
+    <div id="collapseTwo" class="accordion-collapse collapse"  aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Welcome! Click <%= link_to "here", "/login" %> to log into your account. No account? Sign up <%= link_to "here", "/signup" %>!
       </div>
     </div>
   </div>
-</div>
-
-<%# ----------------------------------------------------------- %>
-
-
-      <span class="mask bg-gradient-default opacity-8"></span>
-      <!-- Header container -->
-      <div class="container-fluid d-flex align-items-center">
-        <div class="row">
-          <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello</h1>
-            <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--7">
-      <div class="row">
-        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-          <div class="card card-profile shadow">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="#" class="rounded-circle">
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-              <div class="d-flex justify-content-between">
-              </div>
-            </div>
-            <div class="card-body pt-0 pt-md-4">
-              <div class="row">
-                <div class="col">
-                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                  </div>
-                </div>
-              </div>
-              <div class="text-center">
-                <h3>
-                  Jessica Jones<span class="font-weight-light">, 27</span>
-                </h3>
-                <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i>Bucharest, Romania
-                </div>
-                <div class="h5 mt-4">
-                  <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
-                </div>
-                <div>
-                  <i class="ni education_hat mr-2"></i>University of Computer Science
-                </div>
-                <hr class="my-4">
-                <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-                <a href="#">Show more</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-8 order-xl-1">
-          <div class="card bg-secondary shadow">
-            <div class="card-header bg-white border-0">
-              <div class="row align-items-center">
-                <div class="col-8">
-                  <h3 class="mb-0">My account</h3>
-                </div>
-                <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Settings</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form>
-                <h6 class="heading-small text-muted mb-4">User information</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr class="my-4">
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Contact information</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-city">City</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-country">Country</label>
-                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr class="my-4">
-                <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                  <div class="form-group focused">
-                    <label>About Me</label>
-                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">acrons someting</textarea>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        Where can I find the bikes?
+      </button>
+    </h3>
+    <div id="collapseThree" class="accordion-collapse collapse"  aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        You can find all of the bikes on this <%= link_to "map", "/Home" %>. Click on the map icons to find which bikes are available.
       </div>
     </div>
   </div>
-  <footer class="footer">
-    <div class="row align-items-center justify-content-xl-between">
-      <div class="col-xl-6 m-auto text-center">
-        <div class="copyright">
-          <p>Made with <a href="www.google.com" target="_blank">Argon Dashboard</a> by Creative Tim</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-
   
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+        What membership options do you have?
+      </button>
+    </h3>
+    <div id="collapseFour" class="accordion-collapse collapse"  aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Find out about our memberships and pricing <%= link_to "here", "/memberships" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+        What forms of payment are needed to rent a bike?
+      </button>
+    </h3>
+    <div id="collapseFive" class="accordion-collapse collapse"  aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        We use paypal, but any credit card is accepted.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingSix">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+        What if all the docking stations are full?
+      </button>
+    </h3>
+    <div id="collapseSix" class="accordion-collapse collapse"  aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Each bike comes with a lock; when docking stations are full, use the lock to secure your bike. Please contact us to ensure we retrive it. 
+      </div>
+    </div>
+  </div>
+
+</div>
