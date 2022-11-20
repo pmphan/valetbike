@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   #match '/map/:id', to: 'map#show', via: 'get'
   get 'home'    => 'home#index'
   get 'help'    => 'help#index'
+  get 'stations/mapJSON'    => 'stations#mapJSON'
   get 'rent/index'
 end
