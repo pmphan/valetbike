@@ -81,6 +81,6 @@ gem 'dotenv-rails'
 gem 'devise'
 # gem 'httparty'
 # gem 'paperclip
-gem 'uniquify'
+# gem 'uniquify'
 # gem 'will_paginate'
 
