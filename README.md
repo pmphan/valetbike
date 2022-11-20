@@ -22,18 +22,19 @@ This prototype review is a reflection of the process that Hydabike has completed
 
 ## Environment Configuration
 
-HydraBike runs on Ruby 3.1.2 and Rails 7.0.3.1. It is essential that you configure your environment to use these precise versions of the language and framework.
+### With Docker
 
-### Step 1: Install Ruby on Rails with MySQL
+#### Step 1: Install Docker
 
-On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides below explain how to do so in detail:
+- [Install Docker](https://docs.docker.com/engine/install/)
+- Don't forget to [configure Docker permission](https://docs.docker.com/engine/install/linux-postinstall/)
+- Make sure you can run Docker without sudo with: `docker run hello-world`
 
-- [Mac Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/mac-setup.md)
-- [Windows Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/windows-setup.md)
+#### Step 2: Install Docker Compose
 
-Be sure to complete all the installation procedures in the relevant guide before continuing on to the next step.
+- Install the [Compose plugin](https://docs.docker.com/compose/install/linux/) or [Compose standalone](https://docs.docker.com/compose/install/other/).
 
-### Step 2: Clone this project
+#### Step 3: Clone this project
 
 - Create a local copy of this project with:\
   `git clone https://github.com/abeltranandrade/valetbike.git`
@@ -42,13 +43,39 @@ Be sure to complete all the installation procedures in the relevant guide before
 - **Note:** you should run that command when you are in the folder where you want to store the repo\
   (e.g. `/Users/<your_username>/Development`)
 
-### Step 3. Prepare the application
+#### Step 4: Start the server
+
+Run `docker-compose up -d`.
+
+### Manual Configuration
+
+HydraBike runs on Ruby 3.1.2 and Rails 7.0.3.1. It is essential that you configure your environment to use these precise versions of the language and framework.
+
+#### Step 1: Install Ruby on Rails with MySQL
+
+On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides below explain how to do so in detail:
+
+- [Mac Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/mac-setup.md)
+- [Windows Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/windows-setup.md)
+
+Be sure to complete all the installation procedures in the relevant guide before continuing on to the next step.
+
+#### Step 2: Clone this project
+
+- Create a local copy of this project with:\
+  `git clone https://github.com/abeltranandrade/valetbike.git`
+- Alternatively, you can clone with SSH:\
+  `git clone git@github.com:abeltranandrade/valetbike.git`
+- **Note:** you should run that command when you are in the folder where you want to store the repo\
+  (e.g. `/Users/<your_username>/Development`)
+
+#### Step 3. Prepare the application
 
 - Enter the directory you just created: `cd valetbike`
 - Add `.tool-versions` to app directory to ensure the right ruby is always used: `asdf local ruby 3.1.2`
 - Install required gems with: `bundle install`
 
-### Step 4. Configure the database environment variables
+#### Step 4. Configure the database environment variables
 
 - Add a file called `.env` to the valetbike root directory
 - Ensure that it includes the credentials you setup when installing MySQL:
@@ -64,7 +91,7 @@ MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
 
 - Alternatively, you might want to set a different username other than `root` to isolate your application. However, you will have to set up this user with appropriate credentials and authorization as follow.
 
-### Step 4.5: (Optional) Set up users with appropriate credentials
+#### Step 4.5: (Optional) Set up users with appropriate credentials
 
 Again, this step is only needed if you had set up your username with anything other than `root` in the previous step.
 
@@ -81,7 +108,7 @@ GRANT ALL PRIVILEGES ON valetbike_development.* TO 'username'@'localhost';
 GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
 ```
 
-### Step 5: Prepare the database in MySQL
+#### Step 5. Prepare the database in MySQL
 
 - Use rails to create both the development and test databases with:\
   `rake db:create`
