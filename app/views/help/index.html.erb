@@ -1,24 +1,26 @@
 <h1>Resources</h1>
 
 <div class="section-inner flexbox vertical stretch">
-  <div class="container-circle">
-    <div class="circle">
-    <%= image_tag("signup.jpg", class: "pic-change", alt: "user image") %>
-    <p class="text">Join</p>
-    <p class="text-1">Become a member and choose a membership option that fits your lifestyle.</p>
-    </div>
-    <div class="circle">
-    <%= image_tag('unlock.jpg', alt: 'ValetBike', class: "pic-change") %>
-    <p class="text">Unlock</p>
-    <p class="text-1">Unlock a bike using the mobile app and enjoy!</p>
-    </div>
-    <div class="circle">
-    <%= image_tag('dock.jpg', alt: 'ValetBike', class: "pic-change") %>
-    <p class="text">Dock</p>
-    <p class="text-1">Dock your bike at any station and see vertification on your phone.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <%= image_tag("signup.jpg", class: "pic-change", size: '600x600', alt: "user image") %>
+        <p class="text">Join</p>
+        <p class="text-1">Become a member and choose a membership option that fits your lifestyle.</p>
+      </div>
+      <div class="col-25">
+        <%= image_tag('unlock.jpg', alt: 'ValetBike', size: '600x600', class: "pic-change") %>
+        <p class="text">Unlock</p>
+        <p class="text-1">Unlock a bike using the mobile app and enjoy!</p>
+      </div>
+      <div class="col-25">
+        <%= image_tag('dock.jpg', alt: 'ValetBike', size: '600x600', class: "pic-change") %>
+        <p class="text">Dock</p>
+        <p class="text-1">Dock your bike at any station and see vertification on your phone.</p>
+      </div>
     </div>
   </div>
-  </div>
+  <%#---------------------------------------------------------------------------------------------------------- %>
 
   <h3>FAQs</h3>
   <div class="accordion" id="accordianExample">
@@ -104,5 +106,5 @@
       </div>
     </div>
   </div>
-
+  <div>
 </div>

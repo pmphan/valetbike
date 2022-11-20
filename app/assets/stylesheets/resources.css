@@ -1,39 +1,21 @@
 div { box-sizing: border-box; }
 
-.container-circle {
+.container {
   display: flex;
   justify-content: center;
   align-content: flex-start;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  margin-bottom: 295px;
 }
 
-.text {
-  margin: 25px;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.text-1 {
-  margin: 25px;
-  font-size: 21px !important;
-}
-
-.pic-change{
-  width:  450px;
-  height: 300px;
-  object-fit: cover;
-}
-
-.circle {
-    width: 290px;
-    height: 240px;
-    border-radius: 1000px; 
-    margin: 0px 45px;
-    border: beige;
-}
-
-.circle:hover {
-  background-color: #008000;
+.col-25 {
+  -ms-flex: 25%;
+  flex: 25%;
 }
 
 .accordion-button:not(.collapsed) {
