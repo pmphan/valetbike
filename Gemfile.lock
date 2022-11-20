@@ -219,7 +219,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    uniquify (0.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -264,7 +263,6 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
-  uniquify
   web-console
   webdrivers
 

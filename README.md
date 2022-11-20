@@ -1,123 +1,14 @@
-[IN PROGRESS]
+# ValetBike
 
-# Hydrabike
+*Prototype for ValetBike project*
 
-#### **Starter App for ValetBike project | Smith College CSC223: Software Engineering**
-
+*Smith College CSC223: Software Engineering*
 
 ## Prototype Review
+
 This prototype review is a reflection of the process that Hydabike has completed so far. It aims to help us evaluate the features still under development and determine next steps for delivering a final software product. It also allows us to think about our team collabration for ensuring future success. 
 
-
-## Environment Configuration
-
-
-### Step 1: Cloning the project 
-- Click 'code' at th top of this GitHub page
-- Create a local copy of your fork with: `git clone https://github.com/<your_username>/valetbike.git`.
-- Make sure to store the project in a designated location (i.e. /Users/Code/)
-
-### Step 2: Install MySQL 8
-
-- Download [MySQL](https://www.mysql.com/downloads/). Make sure to select the version that correlates to your operating system
-
-- Follow this [installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) for proper installation 
-
-- In the `env.rb` file, include: 
-```
-- ENV['MYSQL_USERNAME'] = "root"
-- ENV['MYSQL_PASSWORD'] = password
-- MYSQL_SOCKET=/tmp/mysql.sock              # For Mac
-- MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
-```
-
-### Step 3: Install Ruby 3.12
-
-- To set up your local machine from scratch, you will first need to install Ruby. Depending on your operating system, use one of the following guides for the initial step.
-
-- Install Ruby on Mac (Intel and M1)
-- Install Ruby on Mac (M1 additional details)
-- Install Ruby on Windows 10
-
-* Make sure you have the correct Ruby version installed. To check, use command `ruby -v` to see your version.*
-
-* Consult this [Ruby Terminal Commands](https://docs.railsbridge.org/ruby/command_line) for more options*
-
-### Step 4: Installing Gems
-
-- Disable gem docs:
- `echo "gem: --no-document" >> ~/.gemrc`
-- Install Rails 6.1.4:
- `gem install rails --version 6.1.4`
-- Install MySQL gem:
- `gem install mysql2`
- 
-- Install required gems:
-`bundle install`
-
-### Step 5: Running your project
-Congratulations, you should be all set to run the project!
-- If using `rackup` open `http://localhost:9292 (or http://127.0.0.1:9292)` in a browser
-- If using `rails s` open `http://localhost:3000 (or http://127.0.0.1:3000)` in a browser
-
-## Updates
-
-### Map Visability 
-In order to see the map, we overrode precompile assets. In `valetbike/.gitignore`, we add 
-```
-# Ignore precompile assets
-public/assets/
-```
-
-### Gemfile
-Added devise gem for user log-in and registration
-`gem 'devise`
-`gem 'uniquify`
-
-### Gemfile.lock
-In GEM, added
-`bcrypt (3.1.18)` to hash and secure passwords
-
-In PLATFORMS, add 
-```
-  arm64-darwin-21
-  x86_64-darwin-21
- ```
- All commands
-- nokogiri (1.13.8-x86_64-darwin)
-- racc (~> 1.4)
-- tailwindcss-rails (2.0.12-x86_64-darwin)
-- railties (>= 6.0.0)
-- devise (4.8.1)
-- bcrypt (~> 3.0)
-- orm_adapter (~> 0.1)
-- railties (>= 4.1.0)
-- responders
-- warden (~> 1.2.3)
-- orm_adapter (0.5.0)
-- responders (3.0.1)
-- actionpack (>= 5.0)
-- railties (>= 5.0)
-- warden (1.2.9)
-- rack (>= 2.0.9)
-- devise
-
-##Seeding the database
-
-These commands can help you create and edit databases
-1. `bundle install`
-2. `rake db:drop` (if a previous database has been created or in use)
-3. `rake db:create`
-4. `rake db:migrate`
-5. `rake db:seed`
-6. `rackup` or `rails s`
-- run rake import_csv:create_stations
-- run rake import_csv:create_bikes
-- run rake import_csv:create_rides
-
-
-# MVP Functionality 
-
+## MVP Functionality
 
 | Feature        | Location           | Function |
 | ------------- |:-------------:| -----:|
@@ -129,7 +20,87 @@ These commands can help you create and edit databases
 | Renting | Rent      |  User can choose membership options and pricing plans for bike renting |
 | About | About     |   Mission of Hydrabike with information about the team |
 
-# WalkThrough
+## Environment Configuration
+
+HydraBike runs on Ruby 3.1.2 and Rails 7.0.3.1. It is essential that you configure your environment to use these precise versions of the language and framework.
+
+### Step 1: Install Ruby on Rails with MySQL
+
+On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides below explain how to do so in detail:
+
+- [Mac Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/mac-setup.md)
+- [Windows Ruby on Rails Developer Environment Setup](https://github.com/abeltranandrade/valetbike/blob/master/notes/windows-setup.md)
+
+Be sure to complete all the installation procedures in the relevant guide before continuing on to the next step.
+
+### Step 2: Clone this project
+
+- Create a local copy of this project with:\
+  `git clone https://github.com/abeltranandrade/valetbike.git`
+- Alternatively, you can clone with SSH:\
+  `git clone git@github.com:abeltranandrade/valetbike.git`
+- **Note:** you should run that command when you are in the folder where you want to store the repo\
+  (e.g. `/Users/<your_username>/Development`)
+
+### Step 3. Prepare the application
+
+- Enter the directory you just created: `cd valetbike`
+- Add `.tool-versions` to app directory to ensure the right ruby is always used: `asdf local ruby 3.1.2`
+- Install required gems with: `bundle install`
+
+### Step 4. Configure the database environment variables
+
+- Add a file called `.env` to the valetbike root directory
+- Ensure that it includes the credentials you setup when installing MySQL:
+
+```shell
+MYSQL_USERNAME=root
+MYSQL_PASSWORD=YOURPASSWORD
+MYSQL_SOCKET=/tmp/mysql.sock              # For Mac
+MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
+```
+
+- **Note**: Your socket might not be at the above two locations. Find where your MySQL socket resides with `mysql_config --socket`
+
+- Alternatively, you might want to set a different username other than `root` to isolate your application. However, you will have to set up this user with appropriate credentials and authorization as follow.
+
+### Step 4.5: (Optional) Set up users with appropriate credentials
+
+Again, this step is only needed if you had set up your username with anything other than `root` in the previous step.
+
+- Access the database with\
+`mysql -u root -p`
+and enter your password.
+- You have entered the MySQL CLI. Create new user with:\
+`CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';`\
+Make sure your new username and password matched what you entered in previous step.
+- Grant permission to `valetbike_development` and `valetbike_test` to this user (it's okay even if these two tables have not been created):
+
+```
+GRANT ALL PRIVILEGES ON valetbike_development.* TO 'username'@'localhost';
+GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
+```
+
+### Step 5. Prepare the database in MySQL
+
+- Use rails to create both the development and test databases with:\
+  `rake db:create`
+- Or use mysql to just create the development database with:\
+  `mysql -u username -p`\
+  `CREATE DATABASE valetbike_development;`\
+  `exit`
+- Then run the database migrations with:\
+  `rake db:migrate`
+
+## Team Members
+
+* [Adriana Beltran Andrade](https://github.com/abeltranandrade/valetbike)
+* [Helen Y. Glover](https://github.com/hglovercode/hyrabike)
+* [M. Phuong Phan](https://github.com/pmphan/valetbike)
+* [Bobi Arce Mack](https://github.com/bobiamack/valetbike)
+* Jingwen Xiang
+
+## WalkThrough
 
 Welcome to Hydrabikes, a bike sharing collabration for all. 
 

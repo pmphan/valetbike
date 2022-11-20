@@ -1,15 +1,15 @@
-identifier,name,latitude,longitude,capacity,docked_bike_count,address
-21,Florence Bank Station,42.3259949,-72.6360157,7,4,19 Meadow Street Florence MA @ Lilly Library
-24,Florence Center,42.3329593,-72.6838356,10,2,31 Main Street Florence MA
-30,Jackson Street,42.3340529,-72.646363,16,8,7A-7D Jackson Street Northampton MA
-25,Cooley Dickinson Health Care,42.3305066,-72.6553191,14,6,51 Locust Street Northampton MA
-29,State St/Mass Central Rail Trail,42.3358668,-72.669955,10,4,State Street/Mass Central Rail Trail
-33,Northampton High School,42.3250071,-72.6535561,15,8,380 Elm Street Northampton MA
-20,Village Hill/State Hospital,42.312087,-72.6495152,14,6,Village Hill/State Hospital
-26,John M Greene Hall/Smith College,42.3194483,-72.6402443,16,5,1 Chapin Way Northampton MA @ John M. Greene Hall
-23,Forbes Library,42.3167529,-72.6378997,13,6,20 West Street Northampton MA
-27,Pulaski Park/Downtown,42.3173271,-72.6352324,11,3,274 Main Street Northampton MA at Pulaski Park
-31,Main Street/Court House,42.2055889,-72.6098599,10,3,99 Main Street Northampton MA
-28,Northampton Train Station,42.3122414,-72.7680465,13,5,Northampton Train Station
-32,Main Street/Bridge Street,42.3302883,-72.6256294,15,8,1 Bridge Street Northampton MA
-22,YMCA/Childs Park,42.3288235,-72.6528631,17,8,YMCA/Childs Park
+identifier,name,address,latitude,longitude,capacity
+1nsw2aH1zkkJun9UpbFXuQ,Florence Bank Station,19 Meadow Street Florence MA @ Lilly Library,42.326,-72.636,7
+uYd9jBYvBtqy3pjGH_QkNw,Florence Center,31 Main Street Florence MA,42.333,-72.6838,10
+8cjd0lapki-u4lkhvrdtsg,Jackson Street,7A-7D Jackson Street Northampton MA,42.3341,-72.6464,16
+kLRkMZ-r4hdGClKjioEa4Q,Cooley Dickinson Health Care,51 Locust Street Northampton MA,42.3305,-72.6553,14
+_mn65SEc7bXt7PAcPZLKmw,State St/Mass Central Rail Trail,State Street/Mass Central Rail Trail,42.3359,-72.67,10
+7YUs8aOoPGzgpqn4yEqZFg,Northampton High School,380 Elm Street Northampton MA,42.325,-72.6536,15
+upcAlG5QvdFxqpBxh7hIpw,Village Hill/State Hospital,Village Hill/State Hospital,42.3121,-72.6495,14
+MANYI8iNAhSviCMuCF5O3Q,John M Greene Hall/Smith College,1 Chapin Way Northampton MA @ John M. Greene Hall,42.3194,-72.6402,16
+qWTgDBhomIwjaUODCq06DA,Forbes Library,20 West Street Northampton MA,42.3168,-72.6379,13
+smcqCB065xJUHMmnFURGZw,Pulaski Park/Downtown,274 Main Street Northampton MA at Pulaski Park,42.3173,-72.6352,11
+6Hot8GlBM3-11edRvOmGYg,Main Street/Court House,99 Main Street Northampton MA,42.2056,-72.6099,10
+1P5rLUwUk_UkNzYozqVY-w,Northampton Train Station,Northampton Train Station,42.3122,-72.768,13
+bVGBC9M-EENtBiqyxDEBrQ,Main Street/Bridge Street,1 Bridge Street Northampton MA,42.3303,-72.6256,15
+UpddnOq8Et_mpV_JQQLkOw,YMCA/Childs Park,YMCA/Childs Park,42.3288,-72.6529,17
