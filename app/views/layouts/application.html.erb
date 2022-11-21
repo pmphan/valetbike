@@ -20,7 +20,8 @@
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
     crossorigin=""></script>
-    
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>HydraBike</title>
@@ -29,87 +30,68 @@
   <body>
    <!--<bootstrap for navigation bar; lots of features -->
     <div id="site-container" class="flexbox vertical stretch flex-1"> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">    
-    <div class="navbox">
-      <a class="navbar-brand" href="/">
-      <%= image_tag('Hydrabikes.png', size: '100x100', alt: 'ValetBike') %>
-      </a>
-    </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <%# toggle ability for responsive site %>
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">    
+        <div class="navbox">
+          <a class="navbar-brand" href="/">
+            <%= image_tag('Hydrabikes.png', size: '100x100', alt: 'ValetBike') %>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <!-- toggle ability for responsive site -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
       
-      <div class="collapse navbar-collapse flexbox horizontal justify-space-between" id="navbarSupportedContent">
-      <div>
-        <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Home", home_path, class: "nav-link"%>
-        </li>
+        <div class="collapse navbar-collapse flexbox horizontal justify-space-between" id="navbarSupportedContent">
+          <div>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item", data-turbo="false">
+                <%= link_to "Home", home_path, class: "nav-link"%>
+              </li>
 
-        <li class="nav-item", data-turbo="false">
-          <%= link_to "About", "/about", class: "nav-link" %>
-        </li>
+              <li class="nav-item">
+                <%= link_to "About", "/about", class: "nav-link" %>
+              </li>
 
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rent</a>
-          <div class="dropdown-menu">
-            <%= link_to "Find Stations", stations_url, class: "dropdown-item", method: :get %>
-            <%= link_to "Memberships", "/memberships", class: "dropdown-item", method: :get %>
-          </div>
-        </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rent</a>
+                <div class="dropdown-menu">
+                  <%= link_to "Find Stations", stations_url, class: "dropdown-item", method: :get %>
+                  <%= link_to "Memberships", "/memberships", class: "dropdown-item", method: :get %>
+                </div>
+              </li>
 
-        <li class="nav-item">
-          <%= link_to "Resources", "/help", class: "nav-link", method: :get %>
-        </li>
+            <li class="nav-item">
+              <%= link_to "Resources", "/help", class: "nav-link", method: :get %>
+            </li>
   
-        </ul>
-      </div>
-    <div>
-
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-        <li class="nav-item">
-          <div> Welcome <%= current_user.first_name %> </div>
-            <%= button_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
-          <% else %>
-            <%= button_to "Sign in", new_user_session_path, class: "nav-link" %> 
-          <% end %>
+            </ul>
           </div>
 
-      <%# <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> %>
-      </div>
-    </nav>
-    <main>
-      <div class="flexbox vertical center">
-      <%=yield%>
-      </div>
-    </main>
-<%#     
-    <%# <div class="wrapper-footer">
-    <footer class="flexbox horizontal justify-space-between">
-      <div>
-        Reach out <a href="mailto:hydrabikes@gmail.com"> Email: Hydrabikes </a>
-      </div>
-      <div> &copy; Hydrabikes Founded in 89 B.C.</div>
-
-      <!-- Reference: https://www.coderepublics.com/howto/how-to-google-translate.php -->
-      <div id="google_translate_element"></div>
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-      </script>
-      
-      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
-    </footer> %>
-    <%# </div> %>
-    </div>
+          <div>
+            <ul class="navbar-nav mr-auto">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <div> Welcome <%= current_user.first_name %> </div>
+                  <%= button_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
+                </li>
+              <% else %>
+                <%= button_to "Sign in", new_user_session_path, class: "nav-link" %> 
+              <% end %>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="flexbox vertical center">
+          <!-- Display notice or alert messages -->
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <%=yield%>
+        </div>
+      </main>
     </div>
   </body>
 </html>
-
 

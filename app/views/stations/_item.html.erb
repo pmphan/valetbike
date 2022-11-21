@@ -1,0 +1,6 @@
+<div class="gallery-item">
+  <%= link_to station_path(station[:identifier]) do %>
+    <div class='btn'><%= station[:name] %></div>
+    <%= image_tag("bikepic1.jpg", class: "gallery-image", alt: "Station Image") %>
+  <% end %>
+</div>
