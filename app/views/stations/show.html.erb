@@ -1,0 +1,20 @@
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<div>
+  <h1><%= @station.name %></h1>
+  <p><%= @station.address %></p>
+  <p>Available Bikes: <%= @station.docked_bikes.count %></p>
+
+  <div class="field">
+    <% if @station.docked_bikes.count > 0 %>
+      <%= form_tag(home_path, method: "get") do %>
+        <%= render(partial: "stations/bike", collection: @station.docked_bikes, as: :bike) %>
+      <% end %>
+      <%= render(partial: "pay/stripe/checkout_button", locals: {
+            session: @checkout_session, title: "Checkout"})
+      %>
+    <% else %>
+      <div>No bikes available! Sorry!</div>
+    <% end %>
+  </div>
+
+</div>
