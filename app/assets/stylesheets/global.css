@@ -9,6 +9,14 @@ h1 {
   color: white !important;
 }
 
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-size: 55px !important;
+  text-align: center;
+  color: white !important;
+}
+
+
 h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 45px !important;
@@ -56,9 +64,6 @@ img-align: center;
 }
 
 
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -67,11 +72,6 @@ img-align: center;
 
 html, body {
   min-height: 100%;
-}
-
-dropdown {
-  padding: 40px;
-  margin-top:69px
 }
 
 main {
@@ -104,25 +104,27 @@ body {
   background-color: rgb(155, 206, 169)
 }
 
-.stations-search{
+.stations-search {
   display: flex;
   justify-content: space-between;
   padding: 0px;
   margin: 0px;
 }
 
+#dropdownMenuButton {
+  background-color: #495057;
+}
+
 .navbar {
-  background-color: rgb(155, 206, 169)!important;
-  padding: 0.25rem 0.5rem;
+  padding: 0;
 }
 
 .navbox {
-  width: 16%;
-  padding: 0px;
+  width: 7%;
+  padding: 0;
 }
 
 .navbox-brand {
-  margin-right: 1.5rem;
   padding: 0px;
 }
 

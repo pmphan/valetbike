@@ -8,14 +8,25 @@ div { box-sizing: border-box; }
   flex-flow: row wrap;
 }
 
+.pic-change {
+  height: 75%;
+  width: auto;
+  object-fit: cover;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin: 2.5em;
 }
 
 .col-25 {
   -ms-flex: 25%;
   flex: 25%;
+}
+
+.accordion-header {
+  background-color: #343a40;
 }
 
 .accordion-button:not(.collapsed) {
