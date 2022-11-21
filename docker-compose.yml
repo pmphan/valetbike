@@ -1,9 +1,12 @@
-version: '38'
+version: '3.8'
 
 services:
   mysql:
     image: mysql:8.0.31
     container_name: mysql
+    healthcheck:
+      test: mysql valetbike_development --user=${MYSQL_USERNAME:-valetbike} --password=${MYSQL_PASSWORD:-valetbike} --silent --execute "SELECT 1;"
+      interval: 15s
     volumes:
       - mysqldata:/var/lib/mysql
     environment:
@@ -18,14 +21,19 @@ services:
     image: valetbike:latest
     container_name: valetbike
     entrypoint: ./entrypoint.sh
+    command: -b 0.0.0.0 -p 3000
     ports:
       - 3000:3000
     environment:
+      MYSQL_HOST: mysql
       MYSQL_USERNAME: ${MYSQL_USERNAME:-valetbike}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-valetbike}
-      MYSQL_HOST: mysql
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY}
+      RAILS_LOG_TO_STDOUT: yes
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     restart: unless-stopped
 
 volumes:

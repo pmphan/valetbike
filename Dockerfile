@@ -11,5 +11,8 @@ RUN bundle install
 
 COPY . .
 
-CMD rails s -b 0.0.0.0
+EXPOSE 3000
 
+ENTRYPOINT ./entrypoint.sh
+
+CMD -b 0.0.0.0 -p 3000

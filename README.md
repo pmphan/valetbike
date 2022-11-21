@@ -34,7 +34,12 @@ This prototype review is a reflection of the process that Hydabike has completed
 
 - Install the [Compose plugin](https://docs.docker.com/compose/install/linux/) or [Compose standalone](https://docs.docker.com/compose/install/other/).
 
-#### Step 3: Clone this project
+#### Step 3: Integrate Stripe API
+
+- Create a Stripe account at https://stripe.com/
+- Get the API key at Account Settings > API keys. By default you should find two keys, the test secret key and the test publishable key.
+
+#### Step 4: Clone this project
 
 - Create a local copy of this project with:\
   `git clone https://github.com/abeltranandrade/valetbike.git`
@@ -42,10 +47,31 @@ This prototype review is a reflection of the process that Hydabike has completed
   `git clone git@github.com:abeltranandrade/valetbike.git`
 - **Note:** you should run that command when you are in the folder where you want to store the repo\
   (e.g. `/Users/<your_username>/Development`)
+- Enter the project folder:\
+  `cd valetbike`
+
+#### Step 5: Configure the environment variables
+
+Create an `.env` file in your project folder containing the information you obtained from Step 3:
+
+```shell
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLIC_KEY=your_stripe_public_key
+```
+
+You can optionally configure the database by adding into the above file:
+
+```shell
+MYSQL_USERNAME=username
+MYSQL_PASSWORD=password
+```
 
 #### Step 4: Start the server
 
-Run `docker-compose up -d`.
+- Run `docker-compose up -d`.
+- The server should be running at `http://localhost:3000` (or `http://0.0.0.0:3000`).
+- Stop the server with `docker-compose down`.
+- Check service's stdout output with `docker-compose logs -f`.
 
 ### Manual Configuration
 
@@ -68,6 +94,9 @@ Be sure to complete all the installation procedures in the relevant guide before
   `git clone git@github.com:abeltranandrade/valetbike.git`
 - **Note:** you should run that command when you are in the folder where you want to store the repo\
   (e.g. `/Users/<your_username>/Development`)
+- Enter the project folder:\
+  `cd valetbike`
+
 
 #### Step 3. Prepare the application
 
@@ -119,7 +148,7 @@ GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
 - Then run the database migrations with:\
   `rake db:migrate`
 
-### Step 6: Integrate Stripe API
+#### Step 6: Integrate Stripe API
 
 - Create a Stripe account at https://stripe.com/
 - Get the API key at Account Settings > API keys. By default you should find two keys, the test secret key and the test publishable key.
@@ -134,7 +163,7 @@ STRIPE_PUBLISHABLE_KEY=sk_test_XXXX
 - Generate bike product on Stripe with:\
     `rake stripe:products:create`
 
-### Step 7: Confirm that the app runs
+#### Step 7: Confirm that the app runs
 
 - Launch the web server using `rackup` or `rails s` (short for `rails server`) or `bin/dev`
 - If using `rackup` open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
