@@ -1,3 +1,4 @@
-<div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
-  <%= station.identifier %>: <%= station.name %> (<%= station.address %>)
+<div class="gallery-item">
+  <%= link_to station[:name], station_path(station[:identifier]), class: "btn" %>
+  <%= image_tag("bikepic1.jpg", class: "gallery-image", alt: "Station Image") %>
 </div>

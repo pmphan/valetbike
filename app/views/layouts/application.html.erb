@@ -53,8 +53,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rent</a>
           <div class="dropdown-menu">
-            <%= link_to "Find Stations", "/rent", class: "dropdown-item", method: :get %>
-            <%= link_to "Payment", "/payment", class: "dropdown-item", method: :get %>
+            <%= link_to "Find Stations", stations_url, class: "dropdown-item", method: :get %>
             <%= link_to "Memberships", "/memberships", class: "dropdown-item", method: :get %>
           </div>
         </li>
