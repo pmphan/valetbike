@@ -1,0 +1,87 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.container-resources {
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem 0.5rem;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  position:relative;
+  flex: 1 0 18rem;
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.15);
+}
+
+.gallery-item .btn{
+  position: absolute;
+  top: 70%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.gallery-item .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(147, 206, 162);
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(29, 10, 10);
+}
+
+.button:hover {background-color: rgb(103, 186, 124)}
+
+.button:active {
+  background-color: white !important;
+  box-shadow: 0 5px rgb(29, 10, 10);
+  transform: translateY(4px);
+}
+
+
+
+
+

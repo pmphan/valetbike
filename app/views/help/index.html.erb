@@ -1,4 +1,110 @@
-<div>
-  <h1>Help#index</h1>
-  <p>Find me in app/views/help/index.html.erb</p>
+<h1>Resources</h1>
+
+<div class="section-inner flexbox vertical stretch">
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <%= image_tag("signup.jpg", class: "pic-change", size: '600x600', alt: "user image") %>
+        <p class="text">Join</p>
+        <p class="text-1">Become a member and choose a membership option that fits your lifestyle.</p>
+      </div>
+      <div class="col-25">
+        <%= image_tag('unlock.jpg', alt: 'ValetBike', size: '600x600', class: "pic-change") %>
+        <p class="text">Unlock</p>
+        <p class="text-1">Unlock a bike using the mobile app and enjoy!</p>
+      </div>
+      <div class="col-25">
+        <%= image_tag('dock.jpg', alt: 'ValetBike', size: '600x600', class: "pic-change") %>
+        <p class="text">Dock</p>
+        <p class="text-1">Dock your bike at any station and see vertification on your phone.</p>
+      </div>
+    </div>
+  </div>
+  <%#---------------------------------------------------------------------------------------------------------- %>
+
+  <h3>FAQs</h3>
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Why should I choose Hydrabikes?
+      </button>
+    </h3>
+    <div id="collapseOne" class="accordion-collapse collapse"  aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        We deliver fast, easily maintainable bikes at an affordable price.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        Where can I sign up for a bike?
+      </button>
+    </h3>
+    <div id="collapseTwo" class="accordion-collapse collapse"  aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Welcome! Click <%= link_to "here", "/login" %> to log into your account. No account? Sign up <%= link_to "here", "/signup" %>!
+      </div>
+    </div>
+  </div>
+    
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        Where can I find the bikes?
+      </button>
+    </h3>
+    <div id="collapseThree" class="accordion-collapse collapse"  aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        You can find all of the bikes on this <%= link_to "map", "/Home" %>. Click on the map icons to find which bikes are available.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+        What membership options do you have?
+      </button>
+    </h3>
+    <div id="collapseFour" class="accordion-collapse collapse"  aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Find out about our memberships and pricing <%= link_to "here", "/memberships" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+        What forms of payment are needed to rent a bike?
+      </button>
+    </h3>
+    <div id="collapseFive" class="accordion-collapse collapse"  aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        We use paypal, but any credit card is accepted.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="accordianExample">
+    <div class="accordian-item">
+    <h3 class="accordion-header" id="headingSix">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+        What if all the docking stations are full?
+      </button>
+    </h3>
+    <div id="collapseSix" class="accordion-collapse collapse"  aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Each bike comes with a lock; when docking stations are full, use the lock to secure your bike. Please contact us to ensure we retrive it. 
+      </div>
+    </div>
+  </div>
+  <div>
 </div>

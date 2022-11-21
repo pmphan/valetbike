@@ -1,5 +1,32 @@
-<h1>Hello this is the homepage</h1>
-<p> pls use application found in layout for the design. link back to this page </p>
-<!--where the map will show up in  -->
-<div id="map"></div>
-<%= javascript_include_tag "map" %>
+<div>
+    <h1>Hydrabike</h1>
+    <h3>Affordable and accessible bikes for all</h3>
+
+    <div class="stations-search"> 
+        <p><br>Already know your station? Find it here</p>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Search for stations
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Florence Bank Station</a>
+            <a class="dropdown-item" href="#">Florence Center</a>
+            <a class="dropdown-item" href="#">Jackson Street</a>
+            <a class="dropdown-item" href="#">Cooley Dickinson Health Care</a>
+            <a class="dropdown-item" href="#">State St/Mass Central Rail Trail</a>
+            <a class="dropdown-item" href="#">Northampton High School</a>
+            <a class="dropdown-item" href="#">Village Hill/State Hospital</a>
+            <a class="dropdown-item" href="#">John M Greene Hall/Smith College</a>
+            <a class="dropdown-item" href="#">Forbes Library</a>
+            <a class="dropdown-item" href="#">Pulaski Park/Downtown</a>
+            <a class="dropdown-item" href="#">Main Street/Court House</a>
+            <a class="dropdown-item" href="#">Northampton Train Station</a>
+            <a class="dropdown-item" href="#">Main Street/Bridge Street</a>
+            <a class="dropdown-item" href="#">YMCA/Childs Park</a>
+        </div>
+        </div>
+    </div>
+    <div>
+        <div id="map"></div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+div { box-sizing: border-box; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: white !important;
+  color: rgb(155, 206, 169)!important;
+}
+
+.accordion-button:focus {
+  border-color: white;
+  background-color: white !important;
+}
+
+.accordian-item{
+  margin:6px;
+}
