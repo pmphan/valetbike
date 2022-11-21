@@ -15,7 +15,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // gets data from the JSON on the station controller through the URL (a route in config) and then loads the markers
 $.ajax({
     type: 'GET',
-    url: 'stations/mapJSON',
+    url: 'home/map',
     dataType: 'json',
     success: LoadMarkers
 });
@@ -35,6 +35,7 @@ function createCustomIconandPopup (feature, latlng) {
         // PopupDiv.style.width = 200;
         // Station line appended to popup Div
         let StationName = feature.properties.name;
+        let stationID = feature.properties.identifier;
         let NameP = document.createElement("p");
         NameP.innerHTML = "<b> Station: </b>"+ StationName;
         PopupDiv.append(NameP);
@@ -51,7 +52,7 @@ function createCustomIconandPopup (feature, latlng) {
         let linkRent = document.createElement('a');
         // set this attribute so maybe we can pass on the info of what popup they clicked to fill it in in the rent a bike form
         linkRent.setAttribute("StationCalled", feature.properties.name);
-        linkRent.href = "http://localhost:3000/rent";
+        linkRent.href = "http://localhost:3000/stations/"+stationID;
         linkRent.innerHTML = "<b>Rent Here</b>";
         linkDiv.append(linkRent);
         // Instead of trying to align here ask Team how to add a css stylesheet and try to add attributes and do it there
