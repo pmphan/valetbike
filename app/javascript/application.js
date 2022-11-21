@@ -36,18 +36,20 @@ function createCustomIconandPopup (feature, latlng) {
         // Station line appended to popup Div
         let StationName = feature.properties.name;
         let NameP = document.createElement("p");
+        NameP.setAttribute("class", "pop-up");
         NameP.innerHTML = "<b> Station: </b>"+ StationName;
         PopupDiv.append(NameP);
         // Address line appended to popup Div
         let StationAddress = feature.properties.address;
         let AddressP = document.createElement("p");
+        AddressP.setAttribute("class", "pop-up");
         AddressP.innerHTML = "<b>Address: </b> "+ StationAddress;
         //unsure why this is not workingß
         AddressP.style.fontsize = "15px";
         PopupDiv.append(AddressP);
         //Link to Rent a bike Appended to Popup Div (linkDiv is so I can style a div to look more button like)
         let linkDiv = document.createElement('div');
-        linkDiv.setAttribute("id", "rentDiv")
+        linkDiv.setAttribute("id", "rentDiv"); 
         let linkRent = document.createElement('a');
         // set this attribute so maybe we can pass on the info of what popup they clicked to fill it in in the rent a bike form
         linkRent.setAttribute("StationCalled", feature.properties.name);
@@ -57,13 +59,13 @@ function createCustomIconandPopup (feature, latlng) {
         // Instead of trying to align here ask Team how to add a css stylesheet and try to add attributes and do it there
         linkRent.style.alignContent = "center";
         linkRent.style.color = "#000066";
-        linkRent.style.fontSize = "20px";
+        linkRent.style.fontSize = "28px";
         linkDiv.style.alignContent = "center";
         linkDiv.style.borderBottomLeftRadius = "5px";
         linkDiv.style.borderBottomRightRadius = "5px";
         linkDiv.style.borderTopLeftRadius = "5px";
         linkDiv.style.borderTopRightRadius = "5px";
-        linkDiv.style.width = "100px";
+        linkDiv.style.width = "160px";
         linkDiv.style.alignContent = "center";
         linkDiv.style.backgroundColor = "#99CCFF";
         PopupDiv.append(linkDiv);
