@@ -76,12 +76,12 @@ and enter your password.
 Make sure your new username and password matched what you entered in previous step.
 - Grant permission to `valetbike_development` and `valetbike_test` to this user (it's okay even if these two tables have not been created):
 
-```
+```shell
 GRANT ALL PRIVILEGES ON valetbike_development.* TO 'username'@'localhost';
 GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
 ```
 
-### Step 5. Prepare the database in MySQL
+### Step 5: Prepare the database in MySQL
 
 - Use rails to create both the development and test databases with:\
   `rake db:create`
@@ -91,6 +91,28 @@ GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
   `exit`
 - Then run the database migrations with:\
   `rake db:migrate`
+
+### Step 6: Integrate Stripe API
+
+- Create a Stripe account at https://stripe.com/
+- Get the API key at Account Settings > API keys. By default you should find two keys, the test secret key and the test publishable key.
+- Add these keys to the environment file `.env`
+
+```shell
+...
+STRIPE_SECRET_KEY=sk_test_XXXX
+STRIPE_PUBLISHABLE_KEY=sk_test_XXXX
+```
+
+- Generate bike product on Stripe with:\
+    `rake stripe:products:create`
+
+### Step 7: Confirm that the app runs
+
+- Launch the web server using `rackup` or `rails s` (short for `rails server`) or `bin/dev`
+- If using `rackup` open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
+- If using `rails s` or `bin/dev` open http://localhost:3000 (or http://127.0.0.1:3000) in a browser
+- You should see ValetBike welcome page.
 
 ## Team Members
 

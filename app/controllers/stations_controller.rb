@@ -1,29 +1,31 @@
-class StationsController < ApplicationController
-  
-  def index
-    @stations = Station.all.order(identifier: :asc)
-  end
-  
-  #build a geoJSON version of stations whenever the map asks us to
-  def mapJSON
-    @s = Station.all
-    #@s = Station.coordinates("42.3329593","42.3358668","-72.669955","-72.6838356")
+Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
-    geojson = @s.map do |station|
-      {
-        "type": "Feature",
-        "properties": {
-            "name": station.name ,
-            "address": station.address,
-            "popupContent": "Change This Later"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [station.longitude,station.latitude] 
-        }
-      }
-    end
-    render(json: geojson)
-    return geojson
+class StationsController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+
+  def index
+    @stations = Station.all.order(name: :asc)
   end
+
+  def show
+    @station = Station.find_by(params[:identifier])
+    begin
+      product = Stripe::Product.retrieve('STANDARD_RIDE')
+    rescue Stripe::InvalidRequestError => error
+      flash[:alert] = "Something went wrong! Please choose another."
+      Rails.logger.error "[!] Stripe: Retrieving product failed: #{error}"
+      # Redirect to failure page
+      redirect_to action: :index
+      return
+    end
+
+    current_user.set_payment_processor :stripe
+    current_user.payment_processor.customer
+
+    @checkout_session = current_user.payment_processor.checkout(
+      mode: "payment",
+      line_items: product.default_price,
+    )
+  end
+
 end
