@@ -22,9 +22,62 @@ This prototype review is a reflection of the process that Hydabike has completed
 
 ## Environment Configuration
 
+### With Docker
+
+#### Step 1: Install Docker
+
+- [Install Docker](https://docs.docker.com/engine/install/)
+- Don't forget to [configure Docker permission](https://docs.docker.com/engine/install/linux-postinstall/)
+- Make sure you can run Docker without sudo with: `docker run hello-world`
+
+#### Step 2: Install Docker Compose
+
+- Install the [Compose plugin](https://docs.docker.com/compose/install/linux/) or [Compose standalone](https://docs.docker.com/compose/install/other/).
+
+#### Step 3: Integrate Stripe API
+
+- Create a Stripe account at https://stripe.com/
+- Get the API key at Account Settings > API keys. By default you should find two keys, the test secret key and the test publishable key.
+
+#### Step 4: Clone this project
+
+- Create a local copy of this project with:\
+  `git clone https://github.com/abeltranandrade/valetbike.git`
+- Alternatively, you can clone with SSH:\
+  `git clone git@github.com:abeltranandrade/valetbike.git`
+- **Note:** you should run that command when you are in the folder where you want to store the repo\
+  (e.g. `/Users/<your_username>/Development`)
+- Enter the project folder:\
+  `cd valetbike`
+
+#### Step 5: Configure the environment variables
+
+Create an `.env` file in your project folder containing the information you obtained from Step 3:
+
+```shell
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLIC_KEY=your_stripe_public_key
+```
+
+You can optionally configure the database by adding into the above file:
+
+```shell
+MYSQL_USERNAME=username
+MYSQL_PASSWORD=password
+```
+
+#### Step 4: Start the server
+
+- Run `docker-compose up -d`.
+- The server should be running at `http://localhost:3000` (or `http://0.0.0.0:3000`).
+- Stop the server with `docker-compose down`.
+- Check service's stdout output with `docker-compose logs -f`.
+
+### Manual Configuration
+
 HydraBike runs on Ruby 3.1.2 and Rails 7.0.3.1. It is essential that you configure your environment to use these precise versions of the language and framework.
 
-### Step 1: Install Ruby on Rails with MySQL
+#### Step 1: Install Ruby on Rails with MySQL
 
 On Mac it is strongly recommended that you use asdf to install Ruby. On Windows you should set up your environment through the Windows Subsystem for Linux (WSL). The guides below explain how to do so in detail:
 
@@ -33,7 +86,7 @@ On Mac it is strongly recommended that you use asdf to install Ruby. On Windows 
 
 Be sure to complete all the installation procedures in the relevant guide before continuing on to the next step.
 
-### Step 2: Clone this project
+#### Step 2: Clone this project
 
 - Create a local copy of this project with:\
   `git clone https://github.com/abeltranandrade/valetbike.git`
@@ -41,14 +94,17 @@ Be sure to complete all the installation procedures in the relevant guide before
   `git clone git@github.com:abeltranandrade/valetbike.git`
 - **Note:** you should run that command when you are in the folder where you want to store the repo\
   (e.g. `/Users/<your_username>/Development`)
+- Enter the project folder:\
+  `cd valetbike`
 
-### Step 3. Prepare the application
+
+#### Step 3. Prepare the application
 
 - Enter the directory you just created: `cd valetbike`
 - Add `.tool-versions` to app directory to ensure the right ruby is always used: `asdf local ruby 3.1.2`
 - Install required gems with: `bundle install`
 
-### Step 4. Configure the database environment variables
+#### Step 4. Configure the database environment variables
 
 - Add a file called `.env` to the valetbike root directory
 - Ensure that it includes the credentials you setup when installing MySQL:
@@ -64,7 +120,7 @@ MYSQL_SOCKET=/var/run/mysqld/mysqld.sock  # For Windows
 
 - Alternatively, you might want to set a different username other than `root` to isolate your application. However, you will have to set up this user with appropriate credentials and authorization as follow.
 
-### Step 4.5: (Optional) Set up users with appropriate credentials
+#### Step 4.5: (Optional) Set up users with appropriate credentials
 
 Again, this step is only needed if you had set up your username with anything other than `root` in the previous step.
 
@@ -81,7 +137,7 @@ GRANT ALL PRIVILEGES ON valetbike_development.* TO 'username'@'localhost';
 GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
 ```
 
-### Step 5: Prepare the database in MySQL
+#### Step 5. Prepare the database in MySQL
 
 - Use rails to create both the development and test databases with:\
   `rake db:create`
@@ -92,7 +148,7 @@ GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
 - Then run the database migrations with:\
   `rake db:migrate`
 
-### Step 6: Integrate Stripe API
+#### Step 6: Integrate Stripe API
 
 - Create a Stripe account at https://stripe.com/
 - Get the API key at Account Settings > API keys. By default you should find two keys, the test secret key and the test publishable key.
@@ -107,7 +163,7 @@ STRIPE_PUBLISHABLE_KEY=sk_test_XXXX
 - Generate bike product on Stripe with:\
     `rake stripe:products:create`
 
-### Step 7: Confirm that the app runs
+#### Step 7: Confirm that the app runs
 
 - Launch the web server using `rackup` or `rails s` (short for `rails server`) or `bin/dev`
 - If using `rackup` open http://localhost:9292 (or http://127.0.0.1:9292) in a browser

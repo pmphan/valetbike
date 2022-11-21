@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0.31
+    container_name: mysql
+    healthcheck:
+      test: mysql valetbike_development --user=${MYSQL_USERNAME:-valetbike} --password=${MYSQL_PASSWORD:-valetbike} --silent --execute "SELECT 1;"
+      interval: 15s
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_USER: ${MYSQL_PASSWORD:-valetbike}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-valetbike}
+      MYSQL_DATABASE: valetbike_development
+    restart: unless-stopped
+
+  valetbike:
+    build: . 
+    image: valetbike:latest
+    container_name: valetbike
+    entrypoint: ./entrypoint.sh
+    command: -b 0.0.0.0 -p 3000
+    ports:
+      - 3000:3000
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-valetbike}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-valetbike}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY}
+      RAILS_LOG_TO_STDOUT: yes
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mysqldata:
+    driver: local
