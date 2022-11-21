@@ -104,6 +104,9 @@ STRIPE_SECRET_KEY=sk_test_XXXX
 STRIPE_PUBLISHABLE_KEY=sk_test_XXXX
 ```
 
+- Generate bike product on Stripe with:\
+    `rake stripe:products:create`
+
 ### Step 7: Confirm that the app runs
 
 - Launch the web server using `rackup` or `rails s` (short for `rails server`) or `bin/dev`
