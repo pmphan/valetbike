@@ -12,13 +12,15 @@ This prototype review is a reflection of the process that Hydabike has completed
 
 | Feature        | Location           | Function |
 | ------------- |:-------------:| -----:|
-| Map      | Home Page | The homepage includes a map with hoverable markers fo riders to see available bikes using hoverable pins|
+| Map      | Home Page | Includes a map with hoverable popups for riders to see all the stations and available bikes|
 | Sign Up     | User  |  Checks for input validity with a unique username, password,and email  |
-| Log in |  User     | Checks log-in information, directs user to profile and supports renting process|
-| User Profile |  User     | Basic account information and past bike transactions|
-| FAQ | Resources     |  User can find questions and answers, can also look at relevant biking resources |
-| Renting | Rent      |  User can choose membership options and pricing plans for bike renting |
-| About | About     |   Mission of Hydrabike with information about the team |
+| Log in |  User     | Checks log-in information, directs user to profile and supports renting process. Users can also request email vertification for forgotten passwords|
+| User Profile |  User     | Basic account information, chosen membership, and history of past bike transactions|
+| About | About     |   Mission of Hydrabike, values, and information about the team |
+| Find Stations | Find Stations | If users have a specific station in mind, they can use it (instead of the map) |
+| Resources | Resources     |  User can find a small diagram on how to use the platform, can also find questions and answers relevant to the site's functions |
+| Memberships | Memberships     |  User can choose membership options and pricing plans. They will be redirected to sign up before purchase |
+| Check Out | Only when user makes purchase  |  In order to make purchase, user will be redirected to the stripe platform for easy payment options |
 
 ## Environment Configuration
 
