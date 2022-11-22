@@ -1,67 +1,160 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
+*{
+  margin:0;
+  padding:0;
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
+.about{
   padding: 50px;
+    text-align: center;
+    background-color: #08085C;
+    color: white;
+}
+
+.about h3{
+  color:#BFBFC9;
+}
+
+.h3{
+  /* display:flex; */
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper{
+  min-height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  background:#fafafa;
+  padding-top: 35px;
+  font-family: 'raleway';
+}
+
+.h1{
+  display:flex;
+  font-size:3em;
+  margin:25 px 0;
   text-align: center;
-  color: white;
+  font-weight: 500;
+  align-items:center;
 }
 
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
+.p{
+  display:flex;
   text-align: center;
-  cursor: pointer;
-  width: 100%;
 }
 
-.button:hover {
-  background-color: #555;
+.content-box{
+  width:1000px;
+  margin:0 auto;
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
+.card{
+  min-height: 220px;
+  width:320px;
+  padding:30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  margin: 10px 4px;
+  box-shadow: 0px 15px 30px rgba(0,0,0.2);
+}
+
+.card h2{
+  margin-bottom: 12px;
+  font-weight:400;
+  text-align:center;
+  color:#00008B;
+}
+
+.card p{
+  font-size: 15px;
+  color:#6c757d;
+  text-align:center;
+}
+
+
+.card:hover i,
+.card:hover p{
+  color:#fff
+}
+.card:hover h2{
+  font-weight:800;
+  color:#fff;
+}
+
+.card:nth-child(1):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('affordable.jpg');
+  background-size: cover;
+}
+.card:nth-child(2):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('accessible.jpeg');
+  background-size: cover;
+}
+.card:nth-child(3):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('adaptive.jpg');
+  background-size: cover;
+}
+.card:nth-child(4):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('adventurous.jpg');
+  background-size: cover;
+}
+
+.card:nth-child(5):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('adventurous.jpg');
+  background-size: cover;
+}
+
+.card:nth-child(6):hover{
+  background: linear-gradient(45deg,
+                              rgba(25,25,112,0.5)0%,
+                              rgba(25,25,112,0.8)100%),
+                              url('adventurous.jpg');
+  background-size: cover;
+}
+
+/* reponsive */
+@media(max-width:991px){
+  .wrapper{
+    padding:25px;
+  }
+  .wrapper h1{
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+  .content-box{
+    flex-direction: column;
     width: 100%;
-    display: block;
+  }
+  .card{
+    min-width: 300px;
+    margin:10px auto;
   }
 }
+
+
+
