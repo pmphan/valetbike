@@ -8,7 +8,9 @@ class StationsController < ApplicationController
   end
 
   def show
-    @station = Station.find_by(params[:identifier])
+    puts params
+    @station = Station.find_by(identifier: params["id"])
+    puts @station
     begin
       product = Stripe::Product.retrieve('STANDARD_RIDE')
     rescue Stripe::InvalidRequestError => error

@@ -16,6 +16,7 @@ class HomeController < ApplicationController
         "properties": {
             "name": station.name ,
             "address": station.address,
+            "identifier": station.identifier,
             "popupContent": "Change This Later"
         },
         "geometry": {
