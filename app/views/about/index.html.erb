@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="about.css">
+  <title>About us</title>
+  <link rel="stylesheet" type="text/css" href="about.css">
+  <link res="stylesheet" type="text/css" href="'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'">
 </head>
 <body>
+  <div class="about">
+    <h1>Our Mission</h1>
+    <h3>Simply put, we at Hydrabike are passionate about the joys of biking.</h3>
+    <h3> Whether that means spending time with your loved ones </h3>
+    <h3> or traveling the world, our bike sharing program is designed to support you and your unique lifestyle.</h3>
+    <h3>Our program is grounded in three principles</h3>
+  </div>
 
-<div class="about-section">
-  <h1>Hyrabike</h1>
-  <p>Simply put, we at Hydrabike are passionate about the joys of biking. Whether that means spending time with your loved ones or traveling the world, our bike sharing program is designed to support you and your unique lifestyle.</p>
-  <p>Our program is grounded in three principles</p>
-</div>
+  
+  <div class="wrapper">
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <%= image_tag('mountain_bike.jpg', alt: 'ValetBike') %>
-      <div class="container">
-        <h2>Adventure</h2>
+    <div class="content-box">
+      <div class="card">
+        <box-icon name='money-withdraw'></box-icon>
+        <h2>Affordable</h2>
         <p>Our memberships are tailored to fit your specific needs while maintaining affordable prices</p>
       </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <%= image_tag('mountain_bike.jpg', alt: 'ValetBike') %>
-      <div class="container">
+    
+      <div class="card">
+        <box-icon name='heart'></box-icon>
         <h2>Accessible</h2>
-        <p>It's about you and we want to support you! All functions of the program are designed with accessibility in mind</p>
+        <p>You can find our services anytime, anywhere!</p>
       </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <%= image_tag('mountain_bike.jpg', alt: 'ValetBike') %>
-      <div class="container">
+
+      <div class="card">
+        <box-icon name='universal-access' ></box-icon>
+        <h2>Adaptive</h2>
+        <p>Our memberships are tailored to fit your specific needs while maintaining affordable prices</p>
+      </div>
+
+      <div class="card">
+        <box-icon name='cycling'></box-icon>
         <h2>Adventurous</h2>
         <p>Choose a bike that fits your riding style! Check ot our resources page with lots of tips and tricks!</p>
       </div>
-    </div>
-  </div>
-</div>
 
+      <div class="card">
+        <box-icon name='cycling'></box-icon>
+        <h2>Adventurous</h2>
+        <p>Choose a bike that fits your riding style! Check ot our resources page with lots of tips and tricks!</p>
+      </div>
+
+      <div class="card">
+        <box-icon name='cycling'></box-icon>
+        <h2>Adventurous</h2>
+        <p>Choose a bike that fits your riding style! Check ot our resources page with lots of tips and tricks!</p>
+      </div>
+   </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>
+
