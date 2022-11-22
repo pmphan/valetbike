@@ -147,6 +147,8 @@ GRANT ALL PRIVILEGES ON valetbike_test.* TO 'username'@'localhost';
   `exit`
 - Then run the database migrations with:\
   `rake db:migrate`
+- Seed the database with:
+  `rake db:seed`
 
 #### Step 6: Integrate Stripe API
 
