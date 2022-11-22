@@ -11,7 +11,7 @@ services:
       - mysqldata:/var/lib/mysql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
-      MYSQL_USER: ${MYSQL_PASSWORD:-valetbike}
+      MYSQL_USER: ${MYSQL_USERNAME:-valetbike}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-valetbike}
       MYSQL_DATABASE: valetbike_development
     restart: unless-stopped
