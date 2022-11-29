@@ -49,8 +49,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Payment verification via Stripe and Pay
-gem "stripe", "~> 7"
-gem "pay"
+gem "stripe", "~> 8"
+gem "pay", "~> 6.0.3"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -61,13 +61,13 @@ gem "pay"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "rubocop", require: false
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem "rubocop", require: false
+  gem "solargraph"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

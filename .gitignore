@@ -40,3 +40,6 @@
 
 # Ignore precompile assets
 public/assets/
+
+# Ignore solargraph config
+.solargraph.yml
