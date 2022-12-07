@@ -13,6 +13,6 @@ COPY . .
 
 EXPOSE 3000
 
-ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT rails s
 
 CMD -b 0.0.0.0 -p 3000

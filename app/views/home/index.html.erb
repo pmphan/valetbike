@@ -1,5 +1,9 @@
 <%= javascript_include_tag 'map' %>
 
+<% content_for :head do %>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
+
 <div>
     <h1>Hydrabike</h1>
     <h3>Affordable and accessible bikes for all</h3>
