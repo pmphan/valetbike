@@ -7,6 +7,8 @@ services:
     healthcheck:
       test: mysql valetbike_development --user=${MYSQL_USERNAME:-valetbike} --password=${MYSQL_PASSWORD:-valetbike} --silent --execute "SELECT 1;"
       interval: 15s
+    ports:
+      - 3306:3306
     volumes:
       - mysqldata:/var/lib/mysql
     environment:
@@ -24,6 +26,9 @@ services:
     command: -b 0.0.0.0 -p 3000
     ports:
       - 3000:3000
+    volumes:
+      - ./app:/opt/app
+      - ./config:/opt/config
     environment:
       MYSQL_HOST: mysql
       MYSQL_USERNAME: ${MYSQL_USERNAME:-valetbike}
