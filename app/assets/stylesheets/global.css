@@ -81,18 +81,6 @@ main {
   margin-bottom: 1.5%;
 }
 
-body {
-  /* -webkit-text-size-adjust:none;
-  -moz-text-size-adjust:none;
-  -ms-text-size-adjust:none;
-  -webkit-text-size-adjust:100%;
-  -moz-text-size-adjust:100%;
-  -ms-text-size-adjust:100%; */
-  margin:0;
-  padding:0;
-  height:100%;
-}
-
 #site-container{
   position: relative;
   width: 100%;
@@ -113,6 +101,10 @@ body {
 
 #dropdownMenuButton {
   background-color: #495057;
+}
+
+.naming {
+  text-align: center;
 }
 
 .navbar {
@@ -158,7 +150,7 @@ nav li{
     padding-top: 4%;
 }
 
-footer {
+/* footer {
     background-color: #8FBC8F;
     bottom: 0;
     color: white;
@@ -181,4 +173,14 @@ footer > div {
 
 footer a:hover {
     color: white;
+} */
+
+
+/* ---- */
+
+
+
+footer {
+  padding: 50px 0;
+  background-color: #f8f8f8;
 }
