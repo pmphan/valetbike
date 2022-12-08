@@ -5,7 +5,8 @@ class CheckoutController < ApplicationController
 
   def show
     # TODO: CHECK BIKE AVAILABILITY
-    @bike_id = params[:id]
+    bike_id = params[:bike_id]
+    @bike = Bike.find_by(identifier: bike_id)
     begin
       product = Stripe::Product.retrieve('STANDARD_RIDE')
     rescue Stripe::InvalidRequestError => error
@@ -22,14 +23,14 @@ class CheckoutController < ApplicationController
     @checkout_session = current_user.payment_processor.checkout(
       mode: "payment",
       line_items: product.default_price,
-      client_reference_id: @bike_id,
-      success_url: checkout_success_url
+      client_reference_id: bike_id,
+      success_url: checkout_success_url,
     )
   end
 
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-    bike_id = @session[:client_reference_id]
-    bike = Bike.find_by(identifier: bike_id)
+    @bike_id = @session[:client_reference_id]
+    bike = Bike.find_by(identifier: @bike_id)
   end
 end
