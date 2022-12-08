@@ -70,8 +70,10 @@
             <ul class="navbar-nav mr-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <div> Welcome <%= current_user.first_name %> </div>
+                  <div class="naming"> Welcome <%= current_user.first_name%> </div>
                   <%= button_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
+                  <%= link_to "Account", user_path(current_user.identifier), class: "nav-link" %>
+                  <%= link_to "Edit Account", edit_user_registration_path%>
                 </li>
               <% else %>
                 <li class="nav-item">
