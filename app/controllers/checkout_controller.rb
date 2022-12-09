@@ -4,9 +4,20 @@ class CheckoutController < ApplicationController
   before_action :authenticate_user!, only: [:show]
 
   def show
-    # TODO: CHECK BIKE AVAILABILITY
+    if current_user.rented_bike
+      flash[:alert] = "You are already renting a bike. Please cancel before renting."
+      Rails.logger.debug "[ev] User tried to rent two bikes."
+      redirect_to stations_path
+    end
+
     bike_id = params[:bike_id]
-    @bike = Bike.find_by(identifier: bike_id)
+    @bike = Bike.find_by_identifier(bike_id)
+    if not @bike.status_free?
+      flash[:alert] = "Bike is already taken! Please choose another."
+      Rails.logger.debug "[ev] User tried to rent a taken bike."
+      redirect_back(fallback_location: stations_path) 
+    end
+
     begin
       product = Stripe::Product.retrieve('STANDARD_RIDE')
     rescue Stripe::InvalidRequestError => error
@@ -31,6 +42,15 @@ class CheckoutController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @bike_id = @session[:client_reference_id]
-    bike = Bike.find_by(identifier: @bike_id)
+    @bike = Bike.find_by(identifier: @bike_id)
+    @bike.update(
+      status: :taken
+    )
   end
+
+  def cancel
+    current_user.rented_bike.update(
+      status: :free,
+      current_user_id: nil
+    )
 end

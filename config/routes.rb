@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get 'billing' => 'billing#show'
   get 'checkout/success' => 'checkout#success'
+  get 'checkout/cancel' => 'checkout#cancel'
   get 'checkout/:id' => 'checkout#show', as: "checkout"
 end

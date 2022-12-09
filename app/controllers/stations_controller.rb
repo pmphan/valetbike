@@ -5,7 +5,7 @@ class StationsController < ApplicationController
   end
 
   def show
-    @station = Station.find_by(identifier: params["id"])
+    @station = Station.find_by(identifier: params["id"], status: :free)
   end
 
 end
