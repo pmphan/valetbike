@@ -10,6 +10,11 @@ class User < ApplicationRecord
   validates_presence_of   :first_name,
                           :last_name
 
-  has_one :rented_bike, class_name: :Bike, foreign_key: :current_user_id, primary_key: :identifier
-
+  has_one :rented_bike, class_name: :Bike, foreign_key: :current_user_id, primary_key: :identifier 
+  has_one :profile
+  accepts_nested_attributes_for :profile
 end
+
+
+
+

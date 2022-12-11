@@ -1,29 +1,36 @@
-<h1>Resources</h1>
+<div class="wrapper">
 
-<div class="section-inner flexbox vertical stretch">
-  <div class="container">
-    <div class="row">
-      <div class="col-25">
+  <header>
+    <h1 class ="typewriter"><span class="waving-hand">🚲</span>Resources</h1>
+  </header>
+
+  <section class="columns">
+	  <div class="column">
         <%= image_tag("signup.jpg", class: "pic-change", alt: "user image") %>
-        <p class="text">Join</p>
-        <p class="text-1">Choose a membership option that fits your lifestyle.</p>
-      </div>
-      <div class="col-25">
+        <p class="text">1. Select</p>
+        <p class="text-1">Choose a bike from any station.</p>
+    </div>
+
+    <div class="column">
         <%= image_tag('unlock.jpg', alt: 'ValetBike', class: "pic-change") %>
-        <p class="text">Unlock</p>
-        <p class="text-1">Unlock a bike using the mobile app and enjoy!</p>
-      </div>
-      <div class="col-25">
+        <p class="text">2. Unlock</p>
+        <p class="text-1">Unlock a bike and enjoy!</p>
+    </div>
+
+    <div class="column">
         <%= image_tag('dock.jpg', alt: 'ValetBike', class: "pic-change") %>
-        <p class="text">Dock</p>
-        <p class="text-1">Dock your bike at any station and see vertification on your phone.</p>
-      </div>
+        <p class="text">3. Dock</p>
+        <p class="text-1">Dock your bike at any station.</p>
     </div>
   </div>
+  </section>	
+
   <!---------------------------------------------------------------------------------------------------------->
 
-  <h3>FAQs</h3>
-  <div class="accordion" id="accordianExample">
+    <h3 class="faqs" >FAQs</h3>
+
+  <div class="wrapper">
+  <div class="container-fluid" id="accordianExample">
     <div class="accordian-item">
     <h3 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -46,7 +53,7 @@
     </h3>
     <div id="collapseTwo" class="accordion-collapse collapse"  aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        Welcome! Click <%= link_to "here", "/login" %> to log into your account. No account? Sign up <%= link_to "here", "/signup" %>!
+        Welcome! Click <%= link_to "here", "users/sign_in" %> to log into your account. No account? Sign up <%= link_to "here", "/users/sign_up" %>!
       </div>
     </div>
   </div>
@@ -60,7 +67,7 @@
     </h3>
     <div id="collapseThree" class="accordion-collapse collapse"  aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        You can find all of the bikes on this <%= link_to "map", "/Home" %>. Click on the map icons to find which bikes are available.
+        You can find all of the bikes on this <%= link_to "map", "/home" %>. You can also search by station <%= link_to "stations", "/stations" %>. 
       </div>
     </div>
   </div>
@@ -88,7 +95,7 @@
     </h3>
     <div id="collapseFive" class="accordion-collapse collapse"  aria-labelledby="headingFive" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        We use paypal, but any credit card is accepted.
+        We use stripe which allows for easy payment.
       </div>
     </div>
   </div>
@@ -97,7 +104,7 @@
     <div class="accordian-item">
     <h3 class="accordion-header" id="headingSix">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-        What if all the docking stations are full?
+        What if I am returning a bike and all stations are full?
       </button>
     </h3>
     <div id="collapseSix" class="accordion-collapse collapse"  aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -106,5 +113,22 @@
       </div>
     </div>
   </div>
-  <div>
+  </div>
+
+  <div class="wrapper-contact">
+    <h3>Contact Us</h3>
+    <p><i>We love compliments<i></p>
+    <form class="cf">
+      <div class="half left cf">
+        <input type="text" class="input-contact" placeholder="Name">
+        <input type="email" class="input-contact" placeholder="Email address">
+        <input type="text" class="input-contact" placeholder="Subject">
+      </div>
+      <div class="half right cf">
+        <textarea class="message" placeholder="Message"></textarea>
+      </div>  
+      <input type="submit" class="submit-button">
+    </form>
+  </div>
+
 </div>

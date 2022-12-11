@@ -1,0 +1,60 @@
+.p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 5px !important;
+  padding: 9px;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 700px;
+  margin: 0 auto 200px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+  border: 2px solid var(--theme);
+  border-radius: 2px;
+}
+
+.form-field {
+  font-size: 25px !important;
+  padding: 9px;
+  color: var(--theme) !important;
+  font-weight: bold;
+}
+
+.form button {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px !important;
+  text-transform: uppercase;
+  outline: 0;
+  background: var(--theme) !important;
+  width: 60%;
+  border: 0;
+  padding: 15px;
+  color: var(--main-text);
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.form button-1 a{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px !important;
+  color: var(--theme) !important;
+}
+
+.form button-1 a:hover {
+  text-decoration: underline;
+}
