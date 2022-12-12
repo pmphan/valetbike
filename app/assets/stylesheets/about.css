@@ -1,3 +1,31 @@
+.mainHeader {
+	height: 100vh;
+	padding-bottom: 5rem;
+	min-height: 40em;	
+	background-image: url("https://images.unsplash.com/photo-1471958680802-1345a694ba6d");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0.0deg) }
+  10% { transform: rotate(16.0deg) }
+  20% { transform: rotate(-6.0deg) }
+  30% { transform: rotate(16.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(16.0deg) }
+  60% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
+}
+
+.waving-hand {
+  animation: wave 2.1s 0.6s infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}
+
 *{
   margin:0;
   padding:0;
@@ -7,12 +35,12 @@
 .about{
   padding: 50px;
     text-align: center;
-    background-color: #08085C;
+    background-color:  rgba(17, 101, 4, 0.8)100%;
     color: white;
 }
 
 .about h3{
-  color:#BFBFC9;
+  color:  rgba(17, 101, 4, 0.8)100% !important;
 }
 
 .h3{
@@ -28,7 +56,6 @@
   justify-content: center;
   align-items:center;
   flex-direction: column;
-  background:#fafafa;
   padding-top: 35px;
   font-family: 'raleway';
 }
@@ -45,6 +72,7 @@
 .p{
   display:flex;
   text-align: center;
+  font-size: 40px !important;
 }
 
 .content-box{
@@ -55,30 +83,74 @@
   flex-wrap:wrap;
 }
 
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: .5rem;
+}
+
+/* .wrapper{
+width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  transition: width .1s;
+} */
+
+.h1{
+  display:flex;
+  font-size:3em;
+  margin:25 px 0;
+  text-align: center;
+  font-weight: 500;
+  align-items:center;
+}
+
+.p{
+  display:flex;
+  text-align: center;
+}
+
+/* .content-box{
+  width:1000px;
+  margin:0 auto;
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+} */
+
+.card-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+
 .card{
   min-height: 220px;
-  width:320px;
+  width: 400px;
   padding:30px;
+  margin: 35px;
   border-radius: 5px;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
   background: #fff;
-  margin: 10px 4px;
   box-shadow: 0px 15px 30px rgba(0,0,0.2);
 }
 
-.card h2{
+.container{
+    width: 100%;
+    min-width: 1000px;
+    display: inline-block;
+}
+
+.card h2 {
   margin-bottom: 12px;
-  font-weight:400;
+  font-size: 43px !important;
+  font-weight: 30;
   text-align:center;
-  color:#00008B;
+  color: rgb(17, 101, 4) !important;
 }
 
 .card p{
   font-size: 15px;
-  color:#6c757d;
+  color: rgb(17, 101, 4);
   text-align:center;
 }
 
@@ -94,48 +166,54 @@
 
 .card:nth-child(1):hover{
   background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
-                              url('affordable.jpg');
+ rgba(25, 133, 99, 0.5)0%,
+ rgba(17, 101, 4, 0.8)100%),
+url('affordable.jpg');
   background-size: cover;
 }
 .card:nth-child(2):hover{
   background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
-                              url('accessible.jpeg');
+ rgba(25, 133, 99, 0.5)0%,
+  rgba(17, 101, 4, 0.8)100%),
+  url('accessible.jpg');
   background-size: cover;
 }
 .card:nth-child(3):hover{
   background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
-                              url('adaptive.jpg');
+  rgba(25, 133, 99, 0.5)0%,
+  rgba(17, 101, 4, 0.8)100%),
+  url('adaptive.jpg');
   background-size: cover;
 }
 .card:nth-child(4):hover{
   background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
+  rgba(25, 133, 99, 0.5)0%,
+  rgba(17, 101, 4, 0.8)100%),
                               url('adventurous.jpg');
   background-size: cover;
 }
 
-.card:nth-child(5):hover{
-  background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
-                              url('adventurous.jpg');
-  background-size: cover;
+
+/* reponsive */
+@media(max-width:991px){
+  .wrapper{
+    padding:25px;
+  }
+  .wrapper h1{
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+  .content-box{
+    flex-direction: column;
+    width: 100%;
+  }
+  .card{
+    min-width: 300px;
+    margin:10px auto;
+  }
 }
 
-.card:nth-child(6):hover{
-  background: linear-gradient(45deg,
-                              rgba(25,25,112,0.5)0%,
-                              rgba(25,25,112,0.8)100%),
-                              url('adventurous.jpg');
-  background-size: cover;
-}
+
 
 /* reponsive */
 @media(max-width:991px){

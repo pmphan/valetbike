@@ -1,0 +1,10 @@
+<%= form_for @profile, url: {action: "update"} do |f| %>
+
+
+  <%= f.text_field :name %>
+   <%= f.text_field :birthday %>
+  <%= f.text_area :bio %>
+  
+
+  <%= f.submit "Update Profile" %>
+<% end %>

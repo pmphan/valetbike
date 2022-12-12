@@ -3,6 +3,23 @@
   box-sizing: border-box;
 }
 
+@keyframes find {
+  0% { transform: rotate(0.0deg) }
+  10% { transform: rotate(16.0deg) }
+  20% { transform: rotate(-6.0deg) }
+  30% { transform: rotate(16.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(16.0deg) }
+  60% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
+}
+
+.magnifying-glass {
+  animation: wave 2.1s 0.6s infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}
+
 
 .container-resources {
   min-width: 100%;
@@ -80,8 +97,3 @@
   box-shadow: 0 5px rgb(29, 10, 10);
   transform: translateY(4px);
 }
-
-
-
-
-

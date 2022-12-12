@@ -8,22 +8,5 @@
     <h1>Hydrabike</h1>
     <h3>Affordable and accessible bikes for all</h3>
 
-    <div class="stations-search"> 
-        <p><br>Already know your station? Find it here</p>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Search for stations
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <% if @stations.present? %>
-              <%= render(partial: "home/station", collection: @stations, as: :station) %>
-            <% else %>
-              <div class="empty">
-                <div class="dropdown-item">No stations found.</div>
-              </div>
-            <% end %>
-         </div>
-        </div>
-      </div>
     <div id="map"></div>
 </div>
