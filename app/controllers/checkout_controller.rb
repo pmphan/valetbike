@@ -53,4 +53,5 @@ class CheckoutController < ApplicationController
       status: :free,
       current_user_id: nil
     )
+  end
 end
