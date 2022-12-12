@@ -1,4 +1,5 @@
 <div>
-  <%= radio_button_tag "bike_id", bike.identifier %>
-  <%= label_tag bike.identifier, "Bike No. #{bike.identifier}" %>
+   <!--Creating the radio button and label for user to be able to pick bikes -->
+  <%= form.radio_button :bike_id, bike.identifier, checked: true %>
+  <%= form.label :bike_id, "Bike Name #{bike.nickname}", value: bike.identifier %>
 </div>

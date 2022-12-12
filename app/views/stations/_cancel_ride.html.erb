@@ -1,0 +1,5 @@
+<% if current_user.rented_bike %>
+  <div class="btn btn-primary">
+    <%= button_to checkout_cancel_path %>
+  </div>
+<% end %>
