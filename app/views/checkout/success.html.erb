@@ -1,1 +1,2 @@
 <h1>Cool! <%= @bike.nickname %></h1>
+<%= render(partial: "ride/start_ride", locals: {bike: @bike}) %>
