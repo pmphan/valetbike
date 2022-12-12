@@ -17,6 +17,7 @@ class HomeController < ApplicationController
             "name": station.name ,
             "address": station.address,
             "identifier": station.identifier,
+            "availability": station.docked_bikes.count,
             "popupContent": "Change This Later"
         },
         "geometry": {
