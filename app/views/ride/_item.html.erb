@@ -1,0 +1,7 @@
+<div>
+  <!-- TODO: Fix this dumb call, just store the name beforehand -->
+  <p>Bike <%= Bike.find_by_identifier(ride[:bike_id])[:nickname] %></p>
+  <p>At station: <%= Station.find_by_identifier(ride[:from_station])[:name] %></p>
+  <p>Start time: <%= ride[:start_time] %></p>
+  <p>End time: <%= ride[:end_time] %></p>
+</div>

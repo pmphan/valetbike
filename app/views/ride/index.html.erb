@@ -1,0 +1,18 @@
+<% if @reserved_bike.present? %>
+  <p>Bike in reserve: <%= @reserved_bike[:nickname] %> at station <%= @reserved_bike.current_station[:name]%></p>
+  <%= render(partial: "ride/start_ride", locals: {bike: @reserved_bike}) %>
+<% end %>
+<% if @active_ride.present? %>
+  <p>Active Ride: <%= @active_ride.bike[:nickname] %></p>
+  <p>Start Time: <%= @active_ride[:start_time] %></p>
+  <%= render(partial: "ride/cancel_ride", locals: {ride: @active_ride}) %>
+<% else %>
+  <p>No active ride</p>
+<% end %>
+
+<% if @inactive_ride.count > 0 %>
+  <h2>History</h2>
+  <%= render(partial: "ride/item", collection: @inactive_ride, as: :ride) %>
+<% else %>
+  <p>No history? <%= link_to "Start riding with us", stations_path %></p>
+<% end %>

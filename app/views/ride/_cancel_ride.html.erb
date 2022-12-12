@@ -1,0 +1,4 @@
+<%= form_with(model: @ride, url: cancel_ride_path, method: :get, id: "start-ride-form") do |f| %>
+  <%= f.hidden_field :ride_id, value: ride.identifier %>
+  <%= f.submit "Stop ride", id: "start-ride-button", class: "btn btn-success", method: :get %>
+<% end %>

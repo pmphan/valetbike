@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, module: "users"
   resources :stations
   resources :users
+  
+  get 'ride/cancel' => 'ride#cancel', as: 'cancel_ride'
+  resources :ride
 
   get 'home'    => 'home#index'
-  get 'about'    => 'about#index'
+  get 'about'   => 'about#index'
   get 'help'    => 'help#index'
 
   get 'home/map' => 'home#map'

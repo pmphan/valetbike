@@ -44,7 +44,8 @@ class CheckoutController < ApplicationController
     @bike_id = @session[:client_reference_id]
     @bike = Bike.find_by(identifier: @bike_id)
     @bike.update(
-      status: :taken
+      status: :reserved,
+      current_user_id: current_user[:identifier]
     )
   end
 
