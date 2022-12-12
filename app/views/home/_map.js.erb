@@ -19,7 +19,29 @@ $( document ).ready(function() {
       success: LoadMarkers
   });
 
-  //"assets/bicycle.svg"
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+  // create div to create the legend out of
+  var div = L.DomUtil.create('div', 'info legend');
+  // colors we want to put in the boxes (i)
+  var colors = ['#D2222D','#FFBF00', '#007000' ];
+  // the labels we want to put next to eac name
+  var labelsWriting = ["0-2 Bikes", "3-5 Bikes", "5+ bikes"];
+
+// inside the div, create a line(br) with a block of i color and the label corresponding i 
+  for (var i = 0; i < colors.length; i++) {
+    div.innerHTML +=
+         '<i style="background:' + colors[i] + '"></i> ' + labelsWriting[i] + '<br>';
+        
+}
+
+    return div;
+};
+
+legend.addTo(map);
+
   // this will dymanically create the pop up and markers for the features(stations) gotten from ajaz
   function createCustomIconandPopup (feature, latlng) {
 
@@ -100,16 +122,4 @@ $( document ).ready(function() {
   function LoadMarkers(data){
      L.geoJSON(data , myLayerOptions).addTo(map);
   }
-
-  //This is the action example on the starting guide to test out actions
-  var popup = L.popup();
-  function onMapClick(e) {
-      popup
-          .setLatLng(e.latlng)
-          .setContent("You clicked the map at " + e.latlng.toString())
-          .openOn(map);
-  }
-  map.on('click', onMapClick);
-  // probably want to use moveend to do the longlat detection of zoom??
-  // map.on("moveend", onMapClick);
 })
