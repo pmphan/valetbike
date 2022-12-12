@@ -29,9 +29,6 @@ services:
       - ./config:/opt/config
     ports:
       - 3000:3000
-    volumes:
-      - ./app:/opt/app
-      - ./config:/opt/config
     environment:
       MYSQL_HOST: mysql
       MYSQL_USERNAME: ${MYSQL_USERNAME:-valetbike}
