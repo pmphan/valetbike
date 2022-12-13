@@ -105,6 +105,7 @@ Be sure to complete all the installation procedures in the relevant guide before
 - Enter the directory you just created: `cd valetbike`
 - Add `.tool-versions` to app directory to ensure the right ruby is always used: `asdf local ruby 3.1.2`
 - Install required gems with: `bundle install`
+- Install tailwindcss with: `rails tailwindcss:install`
 
 #### Step 4. Configure the database environment variables
 
