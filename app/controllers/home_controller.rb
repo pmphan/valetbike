@@ -14,7 +14,7 @@ class HomeController < ApplicationController
             "name": station.name ,
             "address": station.address,
             "identifier": station.identifier,
-            "availability": station.docked_bikes.count,
+            "availability": station.docked_bikes.where(status: :free).count,
             "popupContent": "Change This Later"
         },
         "geometry": {
