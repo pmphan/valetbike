@@ -3,11 +3,15 @@
   <p><%= @station.address %></p>
   <p>Available Bikes: <%= @station.docked_bikes.count %></p>
 
-  <div class="field">
+  <div class="field-group">
     <% if @station.docked_bikes.count > 0 %>
       <%= form_with url: checkout_path, method: :get do |f| %>
-        <%= render(partial: "stations/bike", collection: @station.docked_bikes.where(status: :free), as: :bike, locals: {form: f}) %>
-        <%= f.submit "Rent this bike" %>
+        <div class="row">
+          <%= render(partial: "stations/bike", collection: @station.docked_bikes.where(status: :free), as: :bike, locals: {form: f}) %>
+        </div>
+        <div class="rentbike">
+          <%= f.submit "Rent Your Bike" %>
+        </div>
       <% end %>
     <% else %>
       <div>No bikes available! Sorry!</div>

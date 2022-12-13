@@ -1,6 +1,15 @@
-<div>
+<div class="box-1 col">
    <!--Creating the radio button and label for user to be able to pick bikes -->
-  <%= form.radio_button :bike_id, bike.identifier, checked: true %>
-  <%= form.label :bike_id, "Bike Name #{bike.nickname}", value: bike.identifier %>
+  <div class="box-text">
+    <%= form.radio_button :bike_id, bike.identifier, checked: true %>
+  </div>
+
+  <div class="box-text">
+    <%= form.label :bike_id, "Bike Name #{bike.nickname}", value: bike.identifier %>
+  </div>
+
+  <div>
   <%= image_tag get_random_image %>
+  </div>
+
 </div>

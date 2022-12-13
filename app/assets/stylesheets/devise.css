@@ -9,17 +9,30 @@
   padding: 8% 0 0;
   margin: auto;
 }
-.form {
+
+/* #----------------------------------------------- */
+.box-1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 700px;
-  margin: 0 auto 200px;
-  padding: 45px;
-  text-align: center;
+  background: #6da765;
+  min-width: 450px;
+  max-width: 450px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 30px 30px;
+  padding:0px;
 }
+
+.box-text{
+  font-size: 30px !important;
+  color: white;
+  display: inline-block;
+}
+
+.field-group form{
+  display: flex-wrap;
+  flex-direction: row;
+}
+
+/* #----------------------------------------------- */
 
 .form input {
   border: 2px solid var(--theme);
@@ -57,4 +70,46 @@
 
 .form button-1 a:hover {
   text-decoration: underline;
+}
+
+/* ------------------------------------------- */
+.rentbike {
+  position: relative;
+  background-color: #6da765;
+  border: none;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  font-size: 30px !important;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.rentbike:hover{
+ background:#fff;
+ box-shadow:0px 2px 10px 5px #97B1BF;
+ color:#000;
+}
+
+.rentbike:after {
+  content: "";
+  background: #a8d4a2;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.rentbike:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }

@@ -1,12 +1,10 @@
 /************************************/
 /*        Global Definitions        */
 /************************************/
-
 * {
   margin: 0;
   padding: 0;
 }
-
 .typewriter {
     color: var(--main-text);
     padding: 0 10px;
@@ -26,7 +24,6 @@
     from { width: 0 }
     to { width: 100% }
   }
-
   .carousel-fullscreen .carousel-inner .item {
     height: 100vh; 
     min-height: 600px; 
@@ -34,30 +31,24 @@
     background-repeat: no-repeat; 
     background-size: cover;
 }
-
 h1 {
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-size: 90px !important;
   text-align: center;
   color: var(--main-text);
 }
-
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-size: 55px !important;
   text-align: center;
   color: var(--main-text);
 }
-
-
 h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 45px !important;
-  color: white !important;
   text-align: center;
   color: var(--main-text);
 }
-
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px !important;
@@ -66,41 +57,44 @@ p {
   padding: 0px;
   margin: 0px;
 }
-
 .pop-up {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 15px;
   color: black;
 }
-
 .rentDiv {
   margin: auto;
   width: 50px;
   padding: 10px;
 }
-
 .leaflet-popup {
   position:absolute;
   text-align:center;
-
 }
 .leaflet-popup-content-wrapper {
   padding:2px;
-
 }
-
+.form-bike {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF !important;
+  max-width: 700px;
+  margin: 0 auto 200px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 .leaflet-popup-content {
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
   text-align:center;
 }
-
 main {
   margin: 20px;
   padding: 0px;
 }
-
 #site-container {
   position: relative;
   width: 100%;
@@ -108,11 +102,9 @@ main {
   font-weight: 400;
   background-color: var(--theme);
 }
-
 nav {
   background-color: var(--main-text);
 }
-
 nav li{
   list-style: none;
   margin: 0;
@@ -120,16 +112,13 @@ nav li{
   display: flex;
   justify-content: space-around;
 }
-
 .nav-link {
   color: var(--theme);
 }
-
 .nav-link:hover {
   background-color: var(--theme);
   color: var(--main-text) !important;
 }
-
 footer {
     background-color: var(--theme);
     bottom: 0;
@@ -139,30 +128,24 @@ footer {
     width: 100%;
     position:absolute
 }
-
 footer a {
     color: var(--main-text);
     text-decoration: underline;
     transition: .5s;
 }
-
 footer > div {
     flex: 1 1 33%;
     text-align: center;
 }
-
 footer a:hover {
     color: var(--main-text);
 }
-
 #navbarToggler {
     background-color: var(--theme);
 }
-
 #navbarToggler:focus {
     border: 2px solid var(--theme);
 }
-
 
 /* CSS for general box of the legend */
 .legend {
@@ -179,7 +162,6 @@ footer a:hover {
   margin-right: 8px;
   opacity: 0.7;
 }
-
 /* The things inside the legend */
 .info {
   padding: 6px 8px;

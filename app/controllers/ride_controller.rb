@@ -1,4 +1,5 @@
 class RideController < ApplicationController
+  before_action :authenticate_user!
   def index
     @rides = current_user.all_rides
     @active_ride = @rides.find_by_status(:active)
@@ -49,5 +50,24 @@ class RideController < ApplicationController
       current_user_id: nil
     )
     redirect_back(fallback_location: ride_index_path)
+  end
+
+  def statistic
+    # SQL query for optimization and readability
+    sql = "
+      WITH calc_table(ride_length) AS (
+        SELECT end_time - start_time
+        FROM rides
+        WHERE user_id = \"#{current_user[:identifier]}\"
+              AND status = 1
+      )
+      SELECT AVG(ride_length) AS avg_ride_length,
+             SUM(ride_length) AS total_ride_length,
+             COUNT(*) AS total
+      FROM calc_table;
+    "
+    result = Ride.find_by_sql(sql)
+    puts result
+    render json: {result: result}
   end
 end
