@@ -1,4 +1,4 @@
-import "jquery";
+//= require jquery
 
 // Making sure document is ready before manipulation
 $( document ).ready(function() {
@@ -10,15 +10,7 @@ $( document ).ready(function() {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 
-
-  // gets data from the JSON on the station controller through the URL (a route in config) and then loads the markers
-  $.ajax({
-      type: 'GET',
-      url: 'home/map',
-      dataType: 'json',
-      success: LoadMarkers
-  });
-
+//creating the legend 
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
@@ -41,18 +33,27 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+    
+
+  // gets data from the JSON on the station controller through the URL (a route in config) and then loads the markers
+  $.ajax({
+      type: 'GET',
+      url: 'home/map',
+      dataType: 'json',
+      success: LoadMarkers
+  });
 
   // this will dymanically create the pop up and markers for the features(stations) gotten from ajaz
   function createCustomIconandPopup (feature, latlng) {
 
       // assign the correct icon url depending on bike availability at station
       if(feature.properties.availability < 3){
-        var HydraColoredIcon = "<%= asset_path "hydraRedSGF.png" %>";
+        HydraColoredIcon = "assets/hydraRedSGF.png";
       }
       else if(feature.properties.availability > 2 && feature.properties.availability < 4){
-        var HydraColoredIcon = "<%= asset_path "hydraYellowSGF.png" %>";
+        HydraColoredIcon = "assets/hydraYellowSGF.png";
       }else{
-        var HydraColoredIcon = "<%= asset_path "hydraGreenSGF.png" %>";
+        HydraColoredIcon = "assets/hydraGreenSGF.png";
       }
 
       let BikeIcon = L.icon({
@@ -80,7 +81,7 @@ legend.addTo(map);
           //unsure why this is not workingß
           AddressP.style.fontsize = "15px";
           PopupDiv.append(AddressP);
-          // Address line appended to popup Div
+          // availability appended to popup Div
           let StationAvail = feature.properties.availability;
           let availP = document.createElement("p");
           availP.setAttribute("class", "pop-up");
@@ -92,7 +93,7 @@ legend.addTo(map);
           let linkRent = document.createElement('a');
           // set this attribute so maybe we can pass on the info of what popup they clicked to fill it in in the rent a bike form
           linkRent.setAttribute("StationCalled", feature.properties.name);
-          linkRent.href = "/stations/"+feature.properties.identifier;
+          linkRent.href = "http://localhost:3000/stations/"+feature.properties.identifier;
           linkRent.innerHTML = "<b>Rent Here</b>";
           linkDiv.append(linkRent);
           // Instead of trying to align here ask Team how to add a css stylesheet and try to add attributes and do it there
@@ -122,4 +123,7 @@ legend.addTo(map);
   function LoadMarkers(data){
      L.geoJSON(data , myLayerOptions).addTo(map);
   }
+
+  // probably want to use moveend to do the longlat detection of zoom??
+  // map.on("moveend", onMapClick);
 })
