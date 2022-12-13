@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
   
   get 'ride/cancel' => 'ride#cancel', as: 'cancel_ride'
+  get 'ride/statistic' => 'ride#statistic', as: 'ride_statistic'
   resources :ride
 
   get 'home'    => 'home#index'

@@ -1,0 +1,32 @@
+import "jquery";
+
+$( document ).ready(function() {
+  $.ajax({
+    type: 'GET',
+    url: 'ride/statistic',
+    dataType: 'json',
+    success: displayStats
+  });
+
+  function displayStats(data) {
+    let result = data.result[0]
+    console.log(data)
+    $("#ride-statistic").html(
+      `
+      <h3>Statistics</h3>
+      <ul>
+        <li>Total rides: ${result.total}</li>
+        <li>Avg ride length: ${secondsToReadable(result.avg_ride_length)}</li>
+        <li>Total ride length: ${secondsToReadable(result.total_ride_length)}</li>
+      </ul>`
+    );
+  }
+
+  // Calc time in hours, mins, secs: https://stackoverflow.com/questions/8211744/convert-time-interval-given-in-seconds-into-more-human-readable-form
+  function secondsToReadable(seconds) {
+    var numhours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+    var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+    var numseconds = ((((seconds % 31536000) % 86400) % 3600) % 60).toFixed(2);
+    return numhours + " hours " + numminutes + " minutes " + numseconds + " seconds"
+  }
+})
