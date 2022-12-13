@@ -1,4 +1,5 @@
 class RideController < ApplicationController
+  before_action :authenticate_user!
   def index
     @rides = current_user.all_rides
     @active_ride = @rides.find_by_status(:active)
