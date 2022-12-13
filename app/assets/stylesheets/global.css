@@ -55,6 +55,7 @@ h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 45px !important;
   text-align: center;
+  color: white !important;
   color: var(--main-text);
 }
 
