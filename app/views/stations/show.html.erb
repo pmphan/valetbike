@@ -7,7 +7,7 @@
     <% if @station.docked_bikes.count > 0 %>
       <%= form_with url: checkout_path, method: :get do |f| %>
         <div class="row">
-        <%= render(partial: "stations/bike", collection: @station.docked_bikes.where(status: :free), as: :bike, locals: {form: f}) %>
+          <%= render(partial: "stations/bike", collection: @station.docked_bikes.where(status: :free), as: :bike, locals: {form: f}) %>
         </div>
         <div class="rentbike">
           <%= f.submit "Rent Your Bike" %>
