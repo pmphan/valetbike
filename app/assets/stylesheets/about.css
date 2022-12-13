@@ -134,12 +134,6 @@ width: 100%;
   box-shadow: 0px 15px 30px rgba(0,0,0.2);
 }
 
-.container{
-    width: 100%;
-    min-width: 1000px;
-    display: inline-block;
-}
-
 .card h2 {
   margin-bottom: 12px;
   font-size: 43px !important;
@@ -213,8 +207,6 @@ url('affordable.jpg');
   }
 }
 
-
-
 /* reponsive */
 @media(max-width:991px){
   .wrapper{
@@ -234,5 +226,56 @@ url('affordable.jpg');
   }
 }
 
+ /* ----------------------------------- */
 
 
+ .cardbody {
+  background: linear-gradient(45deg, #061de3, #e306ca);
+  font-family: Helvetica, sans-serif;
+  color: rgb(211, 211, 211);
+  justify-content: center;
+  align-items: center;
+}
+ 
+.profilecontainer {
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.profilecontainer:hover > .profilecard {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.profilecard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.frontcard,
+.backcard {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.frontcard {
+  background-image: url(https://source.unsplash.com/random/350x500);
+}
+
+.backcard {
+  background-color: #3a3a3a;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
